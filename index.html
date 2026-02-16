@@ -1,0 +1,1088 @@
+﻿<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Git para PAP — Guia Interativo (11.º Ano)</title>
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --panel:#101a33;
+      --panel2:#0f1730;
+      --text:#e9eefc;
+      --muted:#b7c3f2;
+      --line:rgba(255,255,255,.10);
+      --brand:#7aa2ff;
+      --brand2:#52ffd6;
+      --good:#33d17a;
+      --warn:#ffcc66;
+      --bad:#ff6b6b;
+
+      --shadow: 0 18px 45px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 12px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 600px at 15% 0%, rgba(122,162,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(82,255,214,.12), transparent 50%),
+        radial-gradient(900px 600px at 60% 110%, rgba(255,204,102,.10), transparent 45%),
+        var(--bg);
+      line-height:1.5;
+    }
+
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .layout{
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      min-height:100vh;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      position:sticky; top:0;
+      height:100vh;
+      padding:18px 16px;
+      border-right:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(16,26,51,.85), rgba(16,26,51,.55));
+      backdrop-filter: blur(10px);
+    }
+    .brand{
+      display:flex; gap:12px; align-items:center;
+      padding:12px 12px;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: linear-gradient(180deg, rgba(122,162,255,.10), rgba(82,255,214,.06));
+    }
+    .logo{
+      width:42px; height:42px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 30% 25%, rgba(122,162,255,.9), rgba(82,255,214,.55), rgba(255,204,102,.35));
+      box-shadow: 0 10px 20px rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.15);
+    }
+    .brand h1{
+      font-size:14px; margin:0; letter-spacing:.2px;
+    }
+    .brand p{
+      margin:2px 0 0 0; font-size:12px; color:var(--muted);
+    }
+
+    .nav{
+      margin-top:14px;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      overflow:hidden;
+      background: rgba(15,23,48,.55);
+    }
+    .nav a{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 14px;
+      border-bottom:1px solid var(--line);
+      color:var(--text);
+      font-size:13px;
+      text-decoration:none;
+    }
+    .nav a:last-child{border-bottom:none}
+    .nav a:hover{background: rgba(122,162,255,.08)}
+    .nav a.active{
+      background: rgba(122,162,255,.12);
+      outline: 1px solid rgba(122,162,255,.25);
+    }
+    .pill{
+      font-size:11px;
+      color:rgba(255,255,255,.82);
+      padding:3px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    .sidebar .tools{
+      margin-top:14px;
+      padding:12px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(15,23,48,.45);
+    }
+    .tools h3{margin:0 0 6px 0; font-size:12px; color:var(--muted); letter-spacing:.3px; text-transform:uppercase}
+    .row{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{
+      cursor:pointer;
+      border:none;
+      color:var(--text);
+      padding:10px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.15);
+      font-size:12px;
+    }
+    .btn:hover{background: rgba(255,255,255,.14)}
+    .btn.primary{
+      background: rgba(122,162,255,.18);
+      border-color: rgba(122,162,255,.30);
+    }
+    .btn.danger{
+      background: rgba(255,107,107,.16);
+      border-color: rgba(255,107,107,.32);
+    }
+
+    /* Main */
+    .main{
+      padding: 26px 22px 60px;
+      max-width: 1100px;
+      margin:0 auto;
+      width:100%;
+    }
+
+    .hero{
+      padding:20px 18px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+    }
+    .hero h2{margin:0 0 8px 0; font-size:26px; letter-spacing:.2px}
+    .hero p{margin:0; color:var(--muted)}
+    .hero .meta{
+      margin-top:12px;
+      display:flex; gap:10px; flex-wrap:wrap;
+      color:rgba(255,255,255,.8);
+      font-size:12px;
+    }
+    .tag{
+      padding:5px 10px;
+      border-radius: 999px;
+      background: rgba(82,255,214,.10);
+      border:1px solid rgba(82,255,214,.22);
+    }
+
+    .grid{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 980px){
+      .layout{grid-template-columns: 1fr}
+      .sidebar{position:relative; height:auto}
+      .grid{grid-template-columns: 1fr}
+    }
+
+    .card{
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(15,23,48,.45);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card .head{
+      padding:14px 14px 10px;
+      border-bottom:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .card .head h3{margin:0; font-size:14px}
+    .card .head p{margin:4px 0 0 0; font-size:12px; color:var(--muted)}
+    .card .body{padding:14px}
+
+    .section{
+      margin-top:18px;
+      padding: 18px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(15,23,48,.35);
+      scroll-margin-top: 14px;
+    }
+    .section h2{
+      margin:0 0 6px 0;
+      font-size:18px;
+      display:flex; align-items:center; gap:10px;
+    }
+    .section .subtitle{
+      margin:0 0 12px 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .step{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      overflow:hidden;
+      margin: 12px 0;
+    }
+    .step .top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 12px 10px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background: rgba(122,162,255,.06);
+    }
+    .step .top .left{
+      display:flex; gap:10px; align-items:flex-start;
+      min-width: 0;
+    }
+    .badge{
+      width:26px; height:26px;
+      border-radius: 10px;
+      display:grid; place-items:center;
+      font-weight:700;
+      background: rgba(122,162,255,.18);
+      border:1px solid rgba(122,162,255,.25);
+      flex: 0 0 auto;
+    }
+    .step .top h4{margin:0; font-size:14px}
+    .step .top p{margin:3px 0 0 0; font-size:12px; color:var(--muted)}
+    .step .content{padding:12px}
+    .codebox{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.30);
+      overflow:hidden;
+    }
+    .codebar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      padding:10px 10px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .codebar span{font-size:12px; color:rgba(255,255,255,.85)}
+    pre{
+      margin:0;
+      padding:12px;
+      overflow:auto;
+      font-size:13px;
+      line-height:1.45;
+      color: #eef3ff;
+    }
+    code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;}
+
+    .hint{
+      margin-top:10px;
+      padding:10px 12px;
+      border-radius: var(--radius2);
+      border:1px dashed rgba(255,255,255,.18);
+      color:rgba(255,255,255,.84);
+      background: rgba(255,255,255,.03);
+      font-size:12px;
+    }
+
+    .check{
+      display:flex; gap:10px; align-items:flex-start;
+      margin-top:10px;
+      padding:10px 12px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(82,255,214,.18);
+      background: rgba(82,255,214,.06);
+      font-size:12px;
+      color: rgba(255,255,255,.85);
+    }
+    input[type="checkbox"]{margin-top:2px; transform:scale(1.15)}
+
+    .prints{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    .ph{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      padding:10px;
+    }
+    .ph small{color:var(--muted)}
+    .ph img{
+      width:100%;
+      height:auto;
+      border-radius: 12px;
+      margin-top:8px;
+      border:1px solid rgba(255,255,255,.10);
+      display:block;
+    }
+    @media (max-width: 980px){
+      .prints{grid-template-columns: 1fr}
+    }
+
+    .quiz{
+      margin-top:12px;
+      padding:12px;
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+    }
+    .quiz h4{margin:0 0 8px 0}
+    .q{
+      padding:10px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22);
+      margin:10px 0;
+    }
+    .q p{margin:0 0 8px 0; font-size:13px}
+    .opt{display:flex; gap:8px; align-items:center; margin:6px 0; font-size:13px; color:rgba(255,255,255,.88)}
+    .result{
+      margin-top:10px;
+      padding:10px 12px;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      font-size:13px;
+      display:none;
+    }
+
+    .footer{
+      margin-top:18px;
+      padding:16px 18px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(15,23,48,.35);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:18px;
+      transform:translateX(-50%);
+      padding:10px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.55);
+      border:1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.9);
+      font-size:12px;
+      display:none;
+      z-index: 999;
+      backdrop-filter: blur(10px);
+    }
+    .kbd{
+      font-family: ui-monospace, Menlo, Monaco, Consolas, monospace;
+      padding:2px 6px;
+      border-radius: 8px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.85);
+      font-size:12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Git para PAP — 11.º Ano</h1>
+          <p>Guia interativo (Linux + GitHub)</p>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <a href="#intro"><span>Introdução</span><span class="pill">Início</span></a>
+        <a href="#basico"><span>1) O básico do Git</span><span class="pill">Core</span></a>
+        <a href="#recuperar"><span>2) Recuperar ficheiros</span><span class="pill">Safety</span></a>
+        <a href="#branches"><span>3) Branches & Merge</span><span class="pill">Workflow</span></a>
+        <a href="#github"><span>4) GitHub & Pages</span><span class="pill">Online</span></a>
+        <a href="#desafio"><span>Desafio PAP</span><span class="pill">Final</span></a>
+      </nav>
+
+      <div class="tools">
+        <h3>Ferramentas</h3>
+        <div class="row">
+          <button class="btn primary" id="markAll">Marcar tudo</button>
+          <button class="btn" id="unmarkAll">Desmarcar</button>
+          <button class="btn danger" id="resetStorage">Reset progresso</button>
+        </div>
+        <div style="margin-top:10px; font-size:12px; color:var(--muted)">
+          Dica: usa <span class="kbd">Ctrl</span>+<span class="kbd">Shift</span>+<span class="kbd">V</span> para colar sem formatação.
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="hero" id="intro">
+        <h2>Guia Interativo — Git/GitHub para a PAP</h2>
+        <p>
+          Vais aprender o essencial: <strong>commits</strong>, <strong>recuperação</strong> e <strong>branches</strong>.
+          No final, tens um mini-desafio com boas práticas para aplicares na tua PAP.
+        </p>
+        <div class="meta">
+          <span class="tag">🧑‍🎓 11.º Ano</span>
+          <span class="tag">🐧 Linux</span>
+          <span class="tag">🌐 GitHub</span>
+          <span class="tag">✅ Passo a passo + prints</span>
+        </div>
+      </header>
+
+      <section class="grid">
+        <div class="card">
+          <div class="head">
+            <div>
+              <h3>Antes de começar</h3>
+              <p>Confirma que tens Git instalado e conta no GitHub.</p>
+            </div>
+            <span class="pill">Checklist</span>
+          </div>
+          <div class="body">
+            <div class="check">
+              <input type="checkbox" data-check="prep-git" />
+              <div>
+                <strong>Tenho Git instalado</strong><br/>
+                <span style="color:var(--muted)">Comando: <code>git --version</code></span>
+              </div>
+            </div>
+            <div class="check">
+              <input type="checkbox" data-check="prep-gh" />
+              <div>
+                <strong>Tenho conta GitHub</strong><br/>
+                <span style="color:var(--muted)">Vou conseguir criar repositórios e ver commits online.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="head">
+            <div>
+              <h3>Regras de ouro (PAP)</h3>
+              <p>Pequenas rotinas que evitam dores de cabeça.</p>
+            </div>
+            <span class="pill">Boas práticas</span>
+          </div>
+          <div class="body">
+            <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+              <li>Commit <strong>frequente</strong> com mensagens claras.</li>
+              <li>Antes de mudanças grandes: cria <strong>branch</strong>.</li>
+              <li>Se algo correr mal: <strong>não apagues a pasta</strong> — recupera com Git.</li>
+              <li>Trabalha com ficheiros de texto (código) e ignora lixo com <code>.gitignore</code>.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 1) Básico -->
+      <section class="section" id="basico">
+        <h2>1) O básico do Git</h2>
+        <p class="subtitle">Criar repositório, adicionar ficheiros e fazer commits (histórico de versões).</p>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">1</div>
+              <div style="min-width:0">
+                <h4>Criar pasta do projeto (PAP)</h4>
+                <p>Cria uma pasta e entra nela.</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="b1" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="codebox">
+              <div class="codebar">
+                <span>Terminal Linux</span>
+                <button class="btn primary" data-copy="#code-b1">Copiar</button>
+              </div>
+              <pre id="code-b1"><code>mkdir projeto_pap
+cd projeto_pap</code></pre>
+            </div>
+            <div class="hint">Se a pasta já existir, usa só <code>cd projeto_pap</code>.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">2</div>
+              <div style="min-width:0">
+                <h4>Inicializar repositório Git</h4>
+                <p>Cria a pasta oculta <code>.git</code> (histórico).</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="b2" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="codebox">
+              <div class="codebar">
+                <span>Terminal Linux</span>
+                <button class="btn primary" data-copy="#code-b2">Copiar</button>
+              </div>
+              <pre id="code-b2"><code>git init</code></pre>
+            </div>
+
+            <div class="prints">
+              <div class="ph">
+                <small>📸 Print obrigatório (exemplo): <code>git init</code> executado</small>
+                <img src="images/github.png" alt="Print do git init (substituir)"/>
+              </div>
+              <div class="ph">
+                <small>Como inserir prints: cria a pasta <code>images/</code> no repositório e faz upload dos PNG/JPG.</small>
+                <div class="hint" style="margin:8px 0 0 0">
+                  Exemplo de nome: <code>images/github.png</code>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">3</div>
+              <div style="min-width:0">
+                <h4>Primeiro ficheiro + primeiro commit</h4>
+                <p>Criar <code>README.md</code>, adicionar e registar no histórico.</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="b3" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="codebox">
+              <div class="codebar">
+                <span>Terminal Linux</span>
+                <button class="btn primary" data-copy="#code-b3">Copiar</button>
+              </div>
+              <pre id="code-b3"><code>echo "# PAP — Projeto" &gt; README.md
+git add README.md
+git commit -m "Adicionar README inicial"</code></pre>
+            </div>
+            <div class="hint">Dica de avaliação: mensagens de commit devem explicar a mudança (verbo + objeto).</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">4</div>
+              <div style="min-width:0">
+                <h4>Ver o histórico</h4>
+                <p>Confirmar que os commits ficaram registados.</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="b4" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="codebox">
+              <div class="codebar">
+                <span>Terminal Linux</span>
+                <button class="btn primary" data-copy="#code-b4">Copiar</button>
+              </div>
+              <pre id="code-b4"><code>git log --oneline --decorate</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz" data-quiz="q1">
+          <h4>Mini-quiz (Básico)</h4>
+          <div class="q">
+            <p>1) Para que serve <code>git add</code>?</p>
+            <label class="opt"><input type="radio" name="q1-1" value="a"> Publicar no GitHub</label>
+            <label class="opt"><input type="radio" name="q1-1" value="b"> Preparar ficheiros para commit (staging)</label>
+            <label class="opt"><input type="radio" name="q1-1" value="c"> Apagar versões antigas</label>
+          </div>
+          <button class="btn primary" data-check-quiz="q1">Verificar</button>
+          <div class="result" id="res-q1"></div>
+        </div>
+      </section>
+
+      <!-- 2) Recuperação -->
+      <section class="section" id="recuperar">
+        <h2>2) Processo de recuperação de um ficheiro</h2>
+        <p class="subtitle">Como voltar atrás quando apagaste ou estragaste um ficheiro.</p>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">1</div>
+              <div style="min-width:0">
+                <h4>Simular um erro (estragar o ficheiro)</h4>
+                <p>Vamos alterar o README e depois recuperar.</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="r1" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="codebox">
+              <div class="codebar">
+                <span>Terminal Linux</span>
+                <button class="btn primary" data-copy="#code-r1">Copiar</button>
+              </div>
+              <pre id="code-r1"><code>echo "Linha errada..." &gt;&gt; README.md
+git status</code></pre>
+            </div>
+            <div class="hint">Deverás ver o ficheiro como <em>modified</em> no <code>git status</code>.</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">2</div>
+              <div style="min-width:0">
+                <h4>Recuperar o ficheiro para a versão do último commit</h4>
+                <p>Descartar alterações locais (sem commit).</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="r2" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="codebox">
+              <div class="codebar">
+                <span>Opção A (recomendada)</span>
+                <button class="btn primary" data-copy="#code-r2">Copiar</button>
+              </div>
+              <pre id="code-r2"><code>git restore README.md</code></pre>
+            </div>
+
+            <div class="hint">
+              Se o teu Git for mais antigo, podes usar:
+              <code>git checkout -- README.md</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">3</div>
+              <div style="min-width:0">
+                <h4>Recuperar um ficheiro apagado</h4>
+                <p>Apagar e recuperar a partir do último commit.</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="r3" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="codebox">
+              <div class="codebar">
+                <span>Terminal Linux</span>
+                <button class="btn primary" data-copy="#code-r3">Copiar</button>
+              </div>
+              <pre id="code-r3"><code>rm README.md
+git status
+git restore README.md</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz" data-quiz="q2">
+          <h4>Mini-quiz (Recuperação)</h4>
+          <div class="q">
+            <p>1) Qual comando descarta alterações não committed num ficheiro?</p>
+            <label class="opt"><input type="radio" name="q2-1" value="a"> git push</label>
+            <label class="opt"><input type="radio" name="q2-1" value="b"> git restore ficheiro</label>
+            <label class="opt"><input type="radio" name="q2-1" value="c"> git init</label>
+          </div>
+          <button class="btn primary" data-check-quiz="q2">Verificar</button>
+          <div class="result" id="res-q2"></div>
+        </div>
+      </section>
+
+      <!-- 3) Branches -->
+      <section class="section" id="branches">
+        <h2>3) Branches & Merge</h2>
+        <p class="subtitle">Trabalhar em funcionalidades sem estragar a versão principal.</p>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">1</div>
+              <div style="min-width:0">
+                <h4>Criar branch para uma funcionalidade</h4>
+                <p>Ex.: criar uma página de contactos.</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="br1" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="codebox">
+              <div class="codebar">
+                <span>Terminal Linux</span>
+                <button class="btn primary" data-copy="#code-br1">Copiar</button>
+              </div>
+              <pre id="code-br1"><code>git switch -c pagina_contactos</code></pre>
+            </div>
+            <div class="hint">Alternativa: <code>git checkout -b pagina_contactos</code></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">2</div>
+              <div style="min-width:0">
+                <h4>Adicionar ficheiro na branch</h4>
+                <p>Criar <code>contactos.html</code> e fazer commit.</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="br2" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="codebox">
+              <div class="codebar">
+                <span>Terminal Linux</span>
+                <button class="btn primary" data-copy="#code-br2">Copiar</button>
+              </div>
+              <pre id="code-br2"><code>printf "&lt;h1&gt;Contactos&lt;/h1&gt;\n&lt;p&gt;Email: ...&lt;/p&gt;\n" &gt; contactos.html
+git add contactos.html
+git commit -m "Adicionar página de contactos"</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">3</div>
+              <div style="min-width:0">
+                <h4>Voltar à main e fazer merge</h4>
+                <p>Juntar a funcionalidade à versão principal.</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="br3" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="codebox">
+              <div class="codebar">
+                <span>Terminal Linux</span>
+                <button class="btn primary" data-copy="#code-br3">Copiar</button>
+              </div>
+              <pre id="code-br3"><code>git switch main
+git merge pagina_contactos</code></pre>
+            </div>
+            <div class="hint">
+              Se houver conflito: lê as marcas <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> e escolhe a versão correta.
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz" data-quiz="q3">
+          <h4>Mini-quiz (Branches)</h4>
+          <div class="q">
+            <p>1) O que faz uma branch?</p>
+            <label class="opt"><input type="radio" name="q3-1" value="a"> Cria uma cópia do histórico para trabalhar isolado</label>
+            <label class="opt"><input type="radio" name="q3-1" value="b"> Apaga commits antigos</label>
+            <label class="opt"><input type="radio" name="q3-1" value="c"> Publica automaticamente no GitHub</label>
+          </div>
+          <button class="btn primary" data-check-quiz="q3">Verificar</button>
+          <div class="result" id="res-q3"></div>
+        </div>
+      </section>
+
+      <!-- 4) GitHub -->
+      <section class="section" id="github">
+        <h2>4) GitHub & GitHub Pages</h2>
+        <p class="subtitle">Colocar o repositório online e publicar o site do projeto.</p>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">1</div>
+              <div style="min-width:0">
+                <h4>Criar repositório no GitHub</h4>
+                <p>No GitHub: New repository → nome: <code>pap</code> (ou semelhante).</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="g1" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="hint">
+              Depois copia o URL do repositório (HTTPS), ex.: <code>https://github.com/teuuser/pap.git</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">2</div>
+              <div style="min-width:0">
+                <h4>Ligar repositório local ao GitHub e enviar</h4>
+                <p>Primeiro push (só uma vez).</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="g2" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="codebox">
+              <div class="codebar">
+                <span>Terminal Linux</span>
+                <button class="btn primary" data-copy="#code-g2">Copiar</button>
+              </div>
+              <pre id="code-g2"><code>git remote add origin URL_DO_TEU_REPO
+git branch -M main
+git push -u origin main</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">3</div>
+              <div style="min-width:0">
+                <h4>Publicar no GitHub Pages</h4>
+                <p>Settings → Pages → Deploy from branch → <code>main</code> / <code>root</code></p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="g3" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="hint">
+              O teu site ficará em: <code>https://teuuser.github.io/teurepo/</code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Desafio -->
+      <section class="section" id="desafio">
+        <h2>Desafio PAP</h2>
+        <p class="subtitle">Tarefa final para entregar (podes anexar prints e link do GitHub Pages).</p>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">1</div>
+              <div style="min-width:0">
+                <h4>Organização do repositório</h4>
+                <p>Estrutura mínima recomendada para PAP.</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="d1" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="codebox">
+              <div class="codebar">
+                <span>Estrutura sugerida</span>
+                <button class="btn primary" data-copy="#code-d1">Copiar</button>
+              </div>
+              <pre id="code-d1"><code>pap/
+  README.md
+  index.html
+  src/         (código)
+  docs/        (documentação)
+  images/      (prints e imagens)
+  .gitignore</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">2</div>
+              <div style="min-width:0">
+                <h4>3 commits “bons”</h4>
+                <p>Faz 3 commits com mensagens claras.</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="d2" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="hint">
+              Exemplos de mensagens: <br/>
+              <code>"Criar estrutura do projeto"</code> • <code>"Adicionar página inicial"</code> • <code>"Corrigir layout e links"</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="top">
+            <div class="left">
+              <div class="badge">3</div>
+              <div style="min-width:0">
+                <h4>Link final</h4>
+                <p>Entrega o link do repositório e do GitHub Pages.</p>
+              </div>
+            </div>
+            <label class="pill"><input type="checkbox" data-check="d3" /> Concluído</label>
+          </div>
+          <div class="content">
+            <div class="hint">
+              ✅ Repositório: <code>https://github.com/teuuser/teurepo</code><br/>
+              ✅ Pages: <code>https://teuuser.github.io/teurepo/</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <strong>Para o professor (opcional):</strong> podes pedir aos alunos que entreguem um PDF com:
+          1) prints (init, commit, log, restore, branch/merge), 2) link do repositório, 3) link do GitHub Pages.
+        </div>
+      </section>
+
+      <div class="footer">
+        <strong>Notas:</strong> Este guia guarda o progresso no teu browser (localStorage).  
+        Se mudares de computador, o progresso não acompanha (a não ser que copies os dados do browser).
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast">Copiado ✅</div>
+
+  <script>
+    // --- Copy to clipboard ---
+    const toast = document.getElementById('toast');
+    function showToast(msg){
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      clearTimeout(window.__t);
+      window.__t = setTimeout(()=> toast.style.display='none', 1200);
+    }
+
+    document.querySelectorAll('[data-copy]').forEach(btn=>{
+      btn.addEventListener('click', async ()=>{
+        const sel = btn.getAttribute('data-copy');
+        const el = document.querySelector(sel);
+        if(!el) return;
+        const text = el.innerText.trim();
+        try{
+          await navigator.clipboard.writeText(text);
+          showToast('Copiado ✅');
+        }catch(e){
+          // fallback
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          ta.remove();
+          showToast('Copiado ✅');
+        }
+      });
+    });
+
+    // --- Progress (checkboxes) ---
+    const storageKey = 'git-pap-progress-v1';
+    const checks = Array.from(document.querySelectorAll('input[type="checkbox"][data-check]'));
+
+    function loadProgress(){
+      try{
+        const raw = localStorage.getItem(storageKey);
+        if(!raw) return {};
+        return JSON.parse(raw);
+      }catch(e){
+        return {};
+      }
+    }
+    function saveProgress(state){
+      localStorage.setItem(storageKey, JSON.stringify(state));
+    }
+
+    const state = loadProgress();
+    checks.forEach(ch=>{
+      const key = ch.getAttribute('data-check');
+      if(state[key] === true) ch.checked = true;
+
+      ch.addEventListener('change', ()=>{
+        state[key] = ch.checked;
+        saveProgress(state);
+      });
+    });
+
+    document.getElementById('markAll').addEventListener('click', ()=>{
+      checks.forEach(ch=>{
+        ch.checked = true;
+        state[ch.getAttribute('data-check')] = true;
+      });
+      saveProgress(state);
+      showToast('Tudo marcado ✅');
+    });
+
+    document.getElementById('unmarkAll').addEventListener('click', ()=>{
+      checks.forEach(ch=>{
+        ch.checked = false;
+        state[ch.getAttribute('data-check')] = false;
+      });
+      saveProgress(state);
+      showToast('Tudo desmarcado');
+    });
+
+    document.getElementById('resetStorage').addEventListener('click', ()=>{
+      localStorage.removeItem(storageKey);
+      checks.forEach(ch=> ch.checked = false);
+      showToast('Progresso limpo');
+    });
+
+    // --- Quizzes ---
+    const quizAnswers = {
+      q1: { "q1-1": "b" },
+      q2: { "q2-1": "b" },
+      q3: { "q3-1": "a" }
+    };
+
+    function gradeQuiz(id){
+      const answers = quizAnswers[id];
+      let ok = 0, total = 0;
+      for(const name in answers){
+        total++;
+        const chosen = document.querySelector(`input[name="${name}"]:checked`);
+        if(chosen && chosen.value === answers[name]) ok++;
+      }
+      return { ok, total };
+    }
+
+    document.querySelectorAll('[data-check-quiz]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const id = btn.getAttribute('data-check-quiz');
+        const {ok, total} = gradeQuiz(id);
+        const res = document.getElementById(`res-${id}`);
+        res.style.display = 'block';
+        if(ok === total){
+          res.style.borderColor = 'rgba(51,209,122,.35)';
+          res.style.background = 'rgba(51,209,122,.10)';
+          res.textContent = `✅ Certo! (${ok}/${total})`;
+        }else{
+          res.style.borderColor = 'rgba(255,204,102,.35)';
+          res.style.background = 'rgba(255,204,102,.10)';
+          res.textContent = `⚠️ Ainda não. (${ok}/${total}) Revê os passos e tenta outra vez.`;
+        }
+      });
+    });
+
+    // --- Active nav on scroll ---
+    const sections = Array.from(document.querySelectorAll('main .hero, main .section'));
+    const navLinks = Array.from(document.querySelectorAll('#nav a'));
+
+    const byId = new Map();
+    navLinks.forEach(a=>{
+      const id = a.getAttribute('href').replace('#','');
+      byId.set(id, a);
+    });
+
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(ent=>{
+        if(ent.isIntersecting){
+          navLinks.forEach(l=> l.classList.remove('active'));
+          const id = ent.target.id;
+          const link = byId.get(id);
+          if(link) link.classList.add('active');
+        }
+      });
+    }, {root:null, threshold:0.35});
+
+    sections.forEach(s=> obs.observe(s));
+  </script>
+</body>
+</html>
