@@ -374,3 +374,11 @@ input[type="checkbox"]{margin-top:2px; transform:scale(1.15)}
   color: rgba(255,255,255,.85);
   font-size:12px;
 }
+.avatar{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,.25);
+  box-shadow: 0 6px 14px rgba(0,0,0,.35);
+}
