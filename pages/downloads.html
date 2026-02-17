@@ -6,6 +6,7 @@
   <title>Downloads & Links — Guia GitHub</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
+
 <body>
 <div class="layout">
 
@@ -14,20 +15,20 @@
       <img src="../images/avatar.png" class="avatar" alt="José Carlos Alves">
       <div>
         <h1>Guia Interativo — GitHub</h1>
-        <p>Tutorial prático (exemplo: PAP)</p>
+        <p>Manual prático para projetos (exemplo: PAP)</p>
       </div>
     </div>
 
-        <!-- MENU (sem README) -->
+    <!-- MENU (sem README) -->
     <nav class="nav" id="nav">
       <a href="../index.html"><span>Início</span><span class="pill">Home</span></a>
       <a href="conta.html"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
       <a href="repo.html"><span>Criar repositório</span><span class="pill">Repo</span></a>
-      <a href="upload.html" class="active"><span>Upload & organização</span><span class="pill">Files</span></a>
+      <a href="upload.html"><span>Upload & organização</span><span class="pill">Files</span></a>
       <a href="branches-pr.html"><span>Branches & PR</span><span class="pill">Flow</span></a>
       <a href="issues.html"><span>Issues</span><span class="pill">Tasks</span></a>
       <a href="pages.html"><span>GitHub Pages</span><span class="pill">Site</span></a>
-      <a href="downloads.html"><span>Downloads & links</span><span class="pill">Links</span></a>
+      <a href="downloads.html" class="active"><span>Downloads & links</span><span class="pill">Links</span></a>
     </nav>
 
     <div class="tools">
@@ -37,85 +38,265 @@
         <button class="btn" id="unmarkAll">Desmarcar</button>
         <button class="btn danger" id="resetStorage">Reset progresso</button>
       </div>
+
+      <div style="margin-top:10px; font-size:12px; color:var(--muted)">
+        Dica: para PAP, guarda também os links “oficiais” — dá credibilidade e evita fontes duvidosas.
+      </div>
     </div>
 
     <div class="sidebar-footer">© 2025 José Carlos Alves. Todos os direitos reservados.</div>
   </aside>
 
   <main class="main">
+    <!-- HERO -->
     <header class="hero">
       <h2>Downloads & Links úteis</h2>
-      <p>Ferramentas recomendadas e formas de descarregar o repositório (ZIP ou GitHub Desktop).</p>
+      <p>
+        Aqui tens as <strong>formas mais comuns</strong> de descarregar o repositório e os
+        <strong>links oficiais</strong> para instalares ferramentas (Git/GitHub Desktop).
+      </p>
+      <p>
+        Objetivo: teres uma cópia local do projeto (para trabalhar offline, fazer backup, ou entregar).
+      </p>
+
       <div class="meta">
         <span class="tag">⬇️ Downloads</span>
         <span class="tag">🧰 Ferramentas</span>
-        <span class="tag">📚 Docs</span>
+        <span class="tag">🔗 Links</span>
+        <span class="tag">🗃️ Backup</span>
+      </div>
+
+      <!-- IMAGEM DE CABEÇALHO (placeholder) -->
+      <div class="prints" style="margin-top:14px">
+        <div class="ph">
+          <small>Imagem (opcional) para esta página — coloca em <code>images/</code></small>
+          <img src="../images/downloads_hero.png" alt="Imagem de capa da secção Downloads (substituir)">
+        </div>
       </div>
     </header>
 
+    <!-- PORQUÊ / QUANDO USAR -->
+    <section class="section">
+      <h2>Quando usar cada opção?</h2>
+      <p class="subtitle">Escolhe a forma certa conforme o que precisas fazer.</p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="head">
+            <div>
+              <h3>Download ZIP</h3>
+              <p>Cópia rápida (sem histórico Git).</p>
+            </div>
+            <span class="pill">Rápido</span>
+          </div>
+          <div class="body">
+            <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+              <li>Bom para backup/entrega rápida.</li>
+              <li>Não permite “push/pull” diretamente.</li>
+              <li>Sem histórico de commits (é só ficheiros).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="head">
+            <div>
+              <h3>GitHub Desktop (Clone)</h3>
+              <p>Para trabalhar com sincronização.</p>
+            </div>
+            <span class="pill">Recomendado</span>
+          </div>
+          <div class="body">
+            <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+              <li>Permite commit, push, pull e branches.</li>
+              <li>Mais fácil do que terminal para iniciantes.</li>
+              <li>Ótimo para trabalho contínuo.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="hint">
+        Boa prática: para uma PAP, usa <strong>GitHub Desktop</strong> para trabalhar e usa
+        <strong>ZIP</strong> só como “backup extra”.
+      </div>
+    </section>
+
+    <!-- LINKS OFICIAIS -->
     <section class="section">
       <h2>Links oficiais</h2>
-      <p class="subtitle">Usa sempre fontes oficiais.</p>
+      <p class="subtitle">Usa sempre fontes oficiais (segurança + versões corretas).</p>
 
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">1</div>
-            <div>
-              <h4>Ferramentas</h4>
-              <p>Instalações e documentação.</p>
+            <div style="min-width:0">
+              <h4>Ferramentas e documentação</h4>
+              <p>Conta, Desktop, Git e documentação oficial.</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="dl-1"> Concluído</label>
         </div>
+
         <div class="content">
-          <div class="hint">
+          <div class="hint" style="line-height:1.8">
             ✅ Criar conta GitHub: <a href="https://github.com/join" target="_blank" rel="noopener">https://github.com/join</a><br/>
             ✅ GitHub Desktop: <a href="https://desktop.github.com/" target="_blank" rel="noopener">https://desktop.github.com/</a><br/>
             ✅ Git (download): <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a><br/>
             ✅ GitHub Docs: <a href="https://docs.github.com/" target="_blank" rel="noopener">https://docs.github.com/</a>
           </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: página oficial do GitHub Desktop (site oficial)</small>
+              <img src="../images/downloads_01.png" alt="Print GitHub Desktop oficial (substituir)">
+            </div>
+            <div class="ph">
+              <small>📸 Print sugerido: página oficial de download do Git (git-scm.com)</small>
+              <img src="../images/downloads_02.png" alt="Print Git download oficial (substituir)">
+            </div>
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- DOWNLOAD ZIP -->
+    <section class="section">
+      <h2>Descarregar o repositório</h2>
+      <p class="subtitle">Duas formas: ZIP (rápido) ou Clone (para trabalhar “a sério”).</p>
 
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">2</div>
-            <div>
-              <h4>Descarregar o repositório (ZIP)</h4>
-              <p>Útil para ter uma cópia rápida.</p>
+            <div style="min-width:0">
+              <h4>Download ZIP</h4>
+              <p>No repositório: <strong>Code</strong> → <strong>Download ZIP</strong>.</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="dl-2"> Concluído</label>
         </div>
+
         <div class="content">
           <div class="hint">
-            No repositório: botão <strong>Code</strong> → <strong>Download ZIP</strong>.
+            Ideal para: cópia rápida / backup / enviar a alguém.
+            <br/>Depois de descarregar, descompacta e abre a pasta.
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: menu <strong>Code</strong> aberto com a opção <strong>Download ZIP</strong></small>
+              <img src="../images/downloads_03.png" alt="Print Code > Download ZIP (substituir)">
+            </div>
+            <div class="ph">
+              <small>📸 Print sugerido: ficheiro .zip descarregado (ex.: pasta Downloads)</small>
+              <img src="../images/downloads_04.png" alt="Print zip descarregado (substituir)">
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- CLONE DESKTOP -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">3</div>
-            <div>
+            <div style="min-width:0">
               <h4>Clonar com GitHub Desktop</h4>
-              <p>Recomendado para trabalhar com sincronização.</p>
+              <p><strong>Code</strong> → <strong>Open with GitHub Desktop</strong> → escolher pasta → <strong>Clone</strong>.</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="dl-3"> Concluído</label>
         </div>
+
         <div class="content">
           <div class="hint">
-            Code → Open with GitHub Desktop → escolher pasta local → Clone.
+            Recomendado para trabalho contínuo (push/pull, commits e branches).
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: menu <strong>Code</strong> com <strong>Open with GitHub Desktop</strong></small>
+              <img src="../images/downloads_05.png" alt="Print Open with GitHub Desktop (substituir)">
+            </div>
+            <div class="ph">
+              <small>📸 Print sugerido: janela do GitHub Desktop com botão <strong>Clone</strong></small>
+              <img src="../images/downloads_06.png" alt="Print GitHub Desktop clone (substituir)">
+            </div>
           </div>
         </div>
       </div>
 
       <div class="footer">
-        <strong>Print sugerido:</strong> menu “Code” com Download ZIP / Open with Desktop.
+        <strong>Prints recomendados (mínimo):</strong>
+        menu Code (ZIP) + menu Code (Desktop) + janela Clone no Desktop.
+      </div>
+    </section>
+
+    <!-- EXTRA: COMANDO GIT (OPCIONAL) -->
+    <section class="section">
+      <h2>Opcional: clonar com Git no terminal</h2>
+      <p class="subtitle">Se já usas terminal, isto é o “clássico”.</p>
+
+      <div class="codebox">
+        <div class="codebar">
+          <span>Comandos (exemplo)</span>
+          <button class="btn primary" data-copy="#code-git-clone">Copiar</button>
+        </div>
+        <pre id="code-git-clone"><code># 1) Clonar o repositório
+git clone https://github.com/TEU_USER/TEU_REPO.git
+
+# 2) Entrar na pasta
+cd TEU_REPO
+
+# 3) Ver estado (opcional)
+git status</code></pre>
+      </div>
+
+      <div class="hint">
+        Dica: se o projeto for para GitHub Pages, confirma que o <code>index.html</code> está na raiz (ou na pasta configurada).
+      </div>
+    </section>
+
+    <!-- PROBLEMAS COMUNS -->
+    <section class="section">
+      <h2>Problemas comuns (e como resolver)</h2>
+      <p class="subtitle">Quando algo “não abre” ou “não aparece”, quase sempre é caminho/nome.</p>
+
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">4</div>
+            <div style="min-width:0">
+              <h4>Checklist rápida</h4>
+              <p>Verifica isto antes de entrares em pânico 😄</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="dl-4"> Concluído</label>
+        </div>
+
+        <div class="content">
+          <div class="hint">
+            <ul style="margin:8px 0 0 18px; color:rgba(255,255,255,.86)">
+              <li><strong>ZIP “não atualiza”</strong>: descarregaste um ZIP antigo — faz download novamente.</li>
+              <li><strong>Desktop não faz clone</strong>: confirma login e permissões (repo privado vs público).</li>
+              <li><strong>Ficheiros não aparecem</strong>: falta <strong>commit/push</strong> no repo.</li>
+              <li><strong>Maiúsculas/minúsculas</strong>: em paths, conta (ex.: <code>Images/</code> ≠ <code>images/</code>).</li>
+            </ul>
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: exemplo de menu Code + aviso “repository not found/permissions” (se aplicável)</small>
+              <img src="../images/downloads_07.png" alt="Print erro/permissões (substituir)">
+            </div>
+            <div class="ph">
+              <small>📸 Print sugerido: exemplo de pasta local clonada com ficheiros visíveis</small>
+              <img src="../images/downloads_08.png" alt="Print pasta clonada (substituir)">
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
