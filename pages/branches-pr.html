@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Upload & Organização — Guia GitHub</title>
+  <title>Branches & Pull Requests — Guia GitHub</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
+
 <body>
 <div class="layout">
 
@@ -14,21 +15,22 @@
       <img src="../images/avatar.png" class="avatar" alt="José Carlos Alves">
       <div>
         <h1>Guia Interativo — GitHub</h1>
-        <p>Tutorial prático (exemplo: PAP)</p>
+        <p>Manual prático para projetos (exemplo: PAP)</p>
       </div>
     </div>
 
-        <!-- MENU (sem README) -->
+    <!-- MENU (sem README) -->
     <nav class="nav" id="nav">
       <a href="../index.html"><span>Início</span><span class="pill">Home</span></a>
       <a href="conta.html"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
       <a href="repo.html"><span>Criar repositório</span><span class="pill">Repo</span></a>
-      <a href="upload.html" class="active"><span>Upload & organização</span><span class="pill">Files</span></a>
-      <a href="branches-pr.html"><span>Branches & PR</span><span class="pill">Flow</span></a>
+      <a href="upload.html"><span>Upload & organização</span><span class="pill">Files</span></a>
+      <a href="branches-pr.html" class="active"><span>Branches & PR</span><span class="pill">Flow</span></a>
       <a href="issues.html"><span>Issues</span><span class="pill">Tasks</span></a>
       <a href="pages.html"><span>GitHub Pages</span><span class="pill">Site</span></a>
       <a href="downloads.html"><span>Downloads & links</span><span class="pill">Links</span></a>
     </nav>
+
     <div class="tools">
       <h3>Ferramentas</h3>
       <div class="row">
@@ -36,108 +38,227 @@
         <button class="btn" id="unmarkAll">Desmarcar</button>
         <button class="btn danger" id="resetStorage">Reset progresso</button>
       </div>
+      <div style="margin-top:10px; font-size:12px; color:var(--muted)">
+        Dica: usa branches para não estragar a <code>main</code>.
+      </div>
     </div>
 
     <div class="sidebar-footer">© 2025 José Carlos Alves. Todos os direitos reservados.</div>
   </aside>
 
   <main class="main">
+
+    <!-- HERO -->
     <header class="hero">
-      <h2>Upload & Organização</h2>
-      <p>Organizar o repositório (estrutura de pastas) e carregar ficheiros e evidências (prints, docs, etc.).</p>
+      <h2>Branches & Pull Requests (PR)</h2>
+      <p>
+        Branches e Pull Requests são a forma mais segura de trabalhar num projeto:
+        crias uma <strong>branch</strong> para fazer alterações sem mexer na <strong>main</strong> e,
+        quando estiver pronto, abres um <strong>Pull Request</strong> para integrar as mudanças.
+      </p>
+      <p>
+        Num contexto de PAP, isto ajuda a mostrar evolução, evitar erros graves e criar evidências claras
+        (prints do PR, do merge, e do histórico).
+      </p>
+
       <div class="meta">
-        <span class="tag">📁 Estrutura</span>
-        <span class="tag">⬆️ Upload</span>
+        <span class="tag">🌿 Branch</span>
+        <span class="tag">🔁 Pull Request</span>
+        <span class="tag">✅ Merge</span>
         <span class="tag">🧾 Evidências</span>
+      </div>
+
+      <!-- Banner (opcional) -->
+      <div class="prints" style="margin-top:14px; display:flex; justify-content:center">
+        <div class="ph" style="max-width: 980px; width:100%">
+          <img src="../images/branches_banner.png" alt="Banner Branches & PR" style="display:block; margin:0 auto;">
+        </div>
       </div>
     </header>
 
+    <!-- CONCEITOS -->
     <section class="section">
-      <h2>Estrutura recomendada (exemplo PAP)</h2>
-      <p class="subtitle">Mantém tudo organizado para facilitar trabalho e avaliação.</p>
+      <h2>O que significam (em linguagem simples)</h2>
+      <p class="subtitle">Antes dos cliques, percebe a lógica.</p>
 
+      <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+        <li><strong>main</strong>: versão principal (a que deve estar sempre “estável”).</li>
+        <li><strong>branch</strong>: cópia “paralela” para testar alterações sem risco.</li>
+        <li><strong>Pull Request</strong>: pedido para juntar a branch à main (com revisão e histórico).</li>
+        <li><strong>merge</strong>: ação final que junta as alterações.</li>
+      </ul>
+
+      <div class="hint">
+        Regra prática: <strong>se a alteração for grande</strong> (nova página, nova funcionalidade, grande refatoração),
+        cria uma branch. Se for pequena (corrigir texto), podes fazer direto na main.
+      </div>
+    </section>
+
+    <!-- NOMES -->
+    <section class="section">
+      <h2>Nomes recomendados para branches</h2>
+      <p class="subtitle">Um bom nome ajuda a perceber o que foi feito.</p>
+
+      <div class="codebox">
+        <div class="codebar">
+          <span>Exemplos</span>
+          <button class="btn primary" data-copy="#code-branch-names">Copiar</button>
+        </div>
+        <pre id="code-branch-names"><code>feature/pagina-contactos
+feature/menu-lateral
+fix/corrigir-links
+docs/atualizar-relatorio</code></pre>
+      </div>
+
+      <div class="hint">
+        Evita nomes genéricos como <code>teste</code> ou <code>branch1</code>. O nome deve explicar o objetivo.
+      </div>
+    </section>
+
+    <!-- PASSOS -->
+    <section class="section">
+      <h2>Passos (web GitHub)</h2>
+      <p class="subtitle">Segue a sequência: criar branch → alterar → abrir PR → merge.</p>
+
+      <!-- 1 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">1</div>
-            <div>
-              <h4>Criar pastas essenciais</h4>
-              <p>Separar código, documentação e imagens.</p>
+            <div style="min-width:0">
+              <h4>Criar uma branch</h4>
+              <p>No repositório, troca de branch e cria uma nova a partir da <code>main</code>.</p>
             </div>
           </div>
-          <label class="pill"><input type="checkbox" data-check="upload-1"> Concluído</label>
+          <label class="pill"><input type="checkbox" data-check="br-1"> Concluído</label>
         </div>
+
         <div class="content">
           <div class="hint">
-            Estrutura:
-            <div class="codebox" style="margin-top:10px">
-              <div class="codebar">
-                <span>Estrutura</span>
-                <button class="btn primary" data-copy="#code-up-struct">Copiar</button>
-              </div>
-              <pre id="code-up-struct"><code>src/      (código)
-docs/     (relatório / documentação)
-images/   (prints e imagens)</code></pre>
+            No topo do repositório: botão <strong>main</strong> → escrever o nome da branch → <strong>Create branch</strong>.
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: dropdown de branches com “Create branch”</small>
+              <img src="../images/branches_criar.png" alt="Criar branch (substituir)"/>
             </div>
-            No GitHub, para criar pastas via interface: <strong>Add file → Create new file</strong> e escreve, por exemplo:
-            <code>docs/README.md</code> (o GitHub cria a pasta automaticamente).
+            <div class="ph">
+              <small>✅ Boa prática: cria a branch com um nome descritivo (ex.: <code>feature/pagina-contactos</code>).</small>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- 2 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">2</div>
-            <div>
-              <h4>Fazer upload de ficheiros</h4>
-              <p>Adicionar documentos, imagens e recursos.</p>
+            <div style="min-width:0">
+              <h4>Fazer alterações na branch</h4>
+              <p>Edita/Carrega ficheiros (por exemplo: criar uma nova página HTML ou atualizar docs).</p>
             </div>
           </div>
-          <label class="pill"><input type="checkbox" data-check="upload-2"> Concluído</label>
+          <label class="pill"><input type="checkbox" data-check="br-2"> Concluído</label>
         </div>
+
         <div class="content">
           <div class="hint">
-            No repositório: <strong>Add file → Upload files</strong>.<br/>
-            Sugestão:
-            <ul style="margin:8px 0 0 18px; color:rgba(255,255,255,.86)">
-              <li>Relatório → <code>docs/</code></li>
-              <li>Imagens/prints → <code>images/</code></li>
-              <li>Código → <code>src/</code></li>
-            </ul>
+            Faz alterações <strong>apenas na branch</strong>. No final, confirma se estás mesmo na branch correta
+            (no topo aparece o nome da branch).
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: ficheiro alterado e branch visível no topo</small>
+              <img src="../images/branches_editar.png" alt="Editar em branch (substituir)"/>
+            </div>
+            <div class="ph">
+              <small>📌 Sugestão: usa uma mensagem de commit clara (verbo + objeto).</small>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- 3 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">3</div>
-            <div>
-              <h4>Commit message clara</h4>
-              <p>Ao fazer upload, escreve uma mensagem que explique o que mudou.</p>
+            <div style="min-width:0">
+              <h4>Abrir Pull Request (PR)</h4>
+              <p>Comparar branch → main e criar o PR com descrição do que foi feito.</p>
             </div>
           </div>
-          <label class="pill"><input type="checkbox" data-check="upload-3"> Concluído</label>
+          <label class="pill"><input type="checkbox" data-check="br-3"> Concluído</label>
         </div>
+
         <div class="content">
           <div class="hint">
-            Exemplos:
-            <div class="codebox" style="margin-top:10px">
-              <div class="codebar">
-                <span>Mensagens</span>
-                <button class="btn primary" data-copy="#code-up-msg">Copiar</button>
-              </div>
-              <pre id="code-up-msg"><code>Adicionar estrutura inicial do projeto
-Adicionar prints de evidência
-Atualizar documentação no docs/</code></pre>
+            Normalmente aparece um botão “Compare & pull request”. Se não aparecer:
+            <strong>Pull requests → New pull request</strong> e escolhe:
+            <code>base: main</code> e <code>compare: tua-branch</code>.
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: criação do PR (base main / compare branch)</small>
+              <img src="../images/branches_pr_novo.png" alt="Novo PR (substituir)"/>
+            </div>
+            <div class="ph">
+              <small>📝 Dica: escreve no PR o que mudaste e porquê (isto conta como evidência).</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">4</div>
+            <div style="min-width:0">
+              <h4>Fazer merge (juntar à main)</h4>
+              <p>Depois de rever, carrega em <strong>Merge pull request</strong>.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="br-4"> Concluído</label>
+        </div>
+
+        <div class="content">
+          <div class="hint">
+            Se aparecer conflito, o GitHub vai pedir resolução. Para já, evita conflitos alterando ficheiros diferentes
+            em cada branch ou fazendo pequenas alterações de cada vez.
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: botão “Merge pull request” + confirmação</small>
+              <img src="../images/branches_merge.png" alt="Merge (substituir)"/>
+            </div>
+            <div class="ph">
+              <small>✅ Opcional: após o merge, podes apagar a branch (o GitHub sugere “Delete branch”).</small>
             </div>
           </div>
         </div>
       </div>
 
       <div class="footer">
-        <strong>Prints sugeridos:</strong> (1) árvore de pastas no GitHub, (2) ecrã de upload concluído.
+        <strong>Prints recomendados (mínimo):</strong>
+        (1) criação da branch, (2) PR criado, (3) merge concluído.
+      </div>
+    </section>
+
+    <!-- PRÓXIMO -->
+    <section class="section">
+      <h2>Próximo passo</h2>
+      <p class="subtitle">
+        Para gerir o trabalho como “lista de tarefas” (e mostrar evolução), usa <strong>Issues</strong>.
+      </p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn primary" href="issues.html" style="text-decoration:none">Ir para “Issues”</a>
+        <a class="btn" href="../index.html" style="text-decoration:none">Voltar ao início</a>
       </div>
     </section>
 
