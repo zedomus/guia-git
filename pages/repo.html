@@ -6,6 +6,7 @@
   <title>Criar repositório — Guia GitHub</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
+
 <body>
 <div class="layout">
 
@@ -14,16 +15,16 @@
       <img src="../images/avatar.png" class="avatar" alt="José Carlos Alves">
       <div>
         <h1>Guia Interativo — GitHub</h1>
-        <p>Tutorial prático (exemplo: PAP)</p>
+        <p>Manual prático para projetos (exemplo: PAP)</p>
       </div>
     </div>
 
-        <!-- MENU (sem README) -->
+    <!-- MENU -->
     <nav class="nav" id="nav">
       <a href="../index.html"><span>Início</span><span class="pill">Home</span></a>
       <a href="conta.html"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
-      <a href="repo.html"><span>Criar repositório</span><span class="pill">Repo</span></a>
-      <a href="upload.html" class="active"><span>Upload & organização</span><span class="pill">Files</span></a>
+      <a href="repo.html" class="active"><span>Criar repositório</span><span class="pill">Repo</span></a>
+      <a href="upload.html"><span>Upload & organização</span><span class="pill">Files</span></a>
       <a href="branches-pr.html"><span>Branches & PR</span><span class="pill">Flow</span></a>
       <a href="issues.html"><span>Issues</span><span class="pill">Tasks</span></a>
       <a href="pages.html"><span>GitHub Pages</span><span class="pill">Site</span></a>
@@ -43,61 +44,280 @@
   </aside>
 
   <main class="main">
+
+    <!-- HERO -->
     <header class="hero">
       <h2>Criar repositório</h2>
-      <p>Criação do repositório para a PAP: nome, descrição, visibilidade e ficheiros iniciais.</p>
+      <p>
+        Nesta etapa vais criar o <strong>repositório principal</strong> do projeto (ex.: PAP).
+        Um repositório bem configurado desde o início evita confusões com versões, ajuda a organizar ficheiros
+        e facilita a publicação no <strong>GitHub Pages</strong> (se for necessário).
+      </p>
+
+      <p>
+        No final desta página deves ter: um repositório criado, com <strong>nome e descrição</strong>, um
+        <strong>README</strong> mínimo, e (opcional) um <strong>.gitignore</strong> para impedir “lixo” (ficheiros temporários)
+        de aparecer no projeto.
+      </p>
+
       <div class="meta">
-        <span class="tag">📦 Repo</span>
+        <span class="tag">📦 Repositório</span>
         <span class="tag">📝 README</span>
-        <span class="tag">🌐 Public</span>
+        <span class="tag">🧹 .gitignore</span>
+        <span class="tag">🌐 Public / Private</span>
+      </div>
+
+      <!-- Banner (opcional) -->
+      <div class="prints" style="margin-top:14px; display:flex; justify-content:center">
+        <div class="ph" style="max-width: 980px; width:100%">
+          <img src="../images/repo_banner.png" alt="Banner criar repositório" style="display:block; margin:0 auto;">
+        </div>
       </div>
     </header>
 
+    <!-- SECÇÃO: DECISÕES IMPORTANTES -->
     <section class="section">
-      <h2>Passos</h2>
-      <p class="subtitle">Objetivo: ter o repositório pronto para receber ficheiros e publicar no Pages.</p>
+      <h2>Antes de criar o repositório</h2>
+      <p class="subtitle">Duas decisões simples que evitam problemas mais tarde.</p>
 
+      <div class="grid">
+        <div class="card">
+          <div class="head">
+            <div>
+              <h3>Nome do repositório</h3>
+              <p>Curto, claro e fácil de partilhar.</p>
+            </div>
+            <span class="pill">Naming</span>
+          </div>
+          <div class="body">
+            <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+              <li><strong>Boas opções:</strong> <code>pap</code>, <code>projeto-pap</code>, <code>pap-2025</code></li>
+              <li>Evita espaços (usa hífen <code>-</code>).</li>
+              <li>Evita nomes genéricos tipo <code>trabalho</code> ou <code>teste</code>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="head">
+            <div>
+              <h3>Visibilidade</h3>
+              <p>Public ou Private — depende do objetivo.</p>
+            </div>
+            <span class="pill">Acesso</span>
+          </div>
+          <div class="body">
+            <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+              <li><strong>Public:</strong> necessário/recomendado se vais usar GitHub Pages publicamente.</li>
+              <li><strong>Private:</strong> melhor para trabalho fechado (mas pode limitar Pages, dependendo do plano).</li>
+              <li>Mesmo em Public, <strong>não publiques dados pessoais</strong> em documentos/prints.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="hint">
+        Regra simples: se vais precisar de um link público para mostrar resultados (site/portefólio), escolhe <strong>Public</strong>.
+        Se o repositório for só para organização interna e não queres expor conteúdos, escolhe <strong>Private</strong>.
+      </div>
+    </section>
+
+    <!-- PASSOS -->
+    <section class="section">
+      <h2>Passos (criação do repositório)</h2>
+      <p class="subtitle">Segue por ordem e marca como concluído.</p>
+
+      <!-- 1 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">1</div>
-            <div>
-              <h4>Criar novo repositório</h4>
-              <p>Escolher nome e descrição.</p>
+            <div style="min-width:0">
+              <h4>Abrir “New repository”</h4>
+              <p>Criar um repositório novo no GitHub.</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="repo-1"> Concluído</label>
         </div>
         <div class="content">
           <div class="hint">
-            Link direto: <a href="https://github.com/new" target="_blank" rel="noopener">https://github.com/new</a><br/>
-            Sugestão de nome: <code>pap</code> / <code>projeto-pap</code> / <code>pap-2025</code>
+            Link direto: <a href="https://github.com/new" target="_blank" rel="noopener">github.com/new</a><br/>
+            Dica: confirma que estás na conta correta (canto superior direito).
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: página “Create a new repository” (início)</small>
+              <img src="../images/repo_new.png" alt="Exemplo: ecrã criar repositório">
+            </div>
+            <div class="ph">
+              <small>✅ Dica: em prints, evita mostrar emails completos/dados sensíveis (se necessário, tapa a zona).</small>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- 2 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">2</div>
-            <div>
-              <h4>Configurações recomendadas</h4>
-              <p>Para facilitar documentação e Pages.</p>
+            <div style="min-width:0">
+              <h4>Nome + descrição</h4>
+              <p>Identifica o projeto e o objetivo do repositório.</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="repo-2"> Concluído</label>
         </div>
         <div class="content">
           <div class="hint">
-            ✅ Visibility: <strong>Public</strong> (recomendado se vais usar Pages)<br/>
-            ✅ Add README: <strong>ON</strong><br/>
-            (Opcional) .gitignore / license
+            <strong>Nome:</strong> curto (ex.: <code>projeto-pap</code>)<br/>
+            <strong>Descrição:</strong> uma linha clara (ex.: “PAP — aplicação web + documentação”)
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: nome e descrição preenchidos</small>
+              <img src="../images/repo_name_desc.png" alt="Exemplo: nome e descrição do repositório">
+            </div>
+            <div class="ph">
+              <small>✅ Boa prática: usa a descrição para dizer o tema/área do projeto numa frase.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">3</div>
+            <div style="min-width:0">
+              <h4>Configurações recomendadas</h4>
+              <p>Preparar o repositório para documentação e (opcionalmente) Pages.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="repo-3"> Concluído</label>
+        </div>
+        <div class="content">
+          <div class="hint">
+            ✅ <strong>Visibility:</strong> <strong>Public</strong> (recomendado se vais publicar no Pages)<br/>
+            ✅ <strong>Add a README file:</strong> <strong>ON</strong><br/>
+            ✅ (Opcional) <strong>Add .gitignore:</strong> escolhe a tecnologia (ex.: Node, Python, VisualStudioCode)<br/>
+            ✅ (Opcional) <strong>License:</strong> pode ficar “None” para trabalhos escolares
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: opções selecionadas (README ON, visibilidade, etc.)</small>
+              <img src="../images/repo_settings.png" alt="Exemplo: opções recomendadas">
+            </div>
+            <div class="ph">
+              <small>✅ Dica: se não souberes o .gitignore, podes adicionar mais tarde (sem problema).</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">4</div>
+            <div style="min-width:0">
+              <h4>Criar o repositório</h4>
+              <p>Finalizar e entrar no repositório recém-criado.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="repo-4"> Concluído</label>
+        </div>
+        <div class="content">
+          <div class="hint">
+            Clica em <strong>Create repository</strong> e confirma que entraste na página do repositório.
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: página principal do repositório (ficheiros + About)</small>
+              <img src="../images/repo_home.png" alt="Exemplo: página principal do repositório">
+            </div>
+            <div class="ph">
+              <small>✅ Confirma: aparece o nome do repositório, o separador “Code” e o README (se ativaste).</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">5</div>
+            <div style="min-width:0">
+              <h4>Editar o README (mínimo recomendado)</h4>
+              <p>O README é a “capa” do teu projeto e ajuda na avaliação/apresentação.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="repo-5"> Concluído</label>
+        </div>
+        <div class="content">
+          <div class="hint">
+            No repositório: abre <strong>README.md</strong> → clica no ícone do lápis (Edit).<br/>
+            Sugestão de conteúdo mínimo (podes copiar e adaptar):
+          </div>
+
+          <div class="codebox">
+            <div class="codebar">
+              <span>Template README (exemplo PAP)</span>
+              <button class="btn primary" data-copy="#code-readme">Copiar</button>
+            </div>
+            <pre id="code-readme"><code># Projeto PAP — [título do projeto]
+
+## Objetivo
+Explica em 2–4 linhas o que o projeto faz e para que serve.
+
+## Tecnologias
+- (ex.: HTML/CSS/JS, Python, etc.)
+
+## Estrutura do repositório
+- `src/` — código
+- `docs/` — documentação (planeamento/relatório)
+- `images/` — evidências (prints)
+
+## Estado do projeto
+- Em desenvolvimento
+
+## Links
+- Repositório: (este link)
+- GitHub Pages (se aplicável): (link)</code></pre>
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: README editado (secções visíveis)</small>
+              <img src="../images/repo_readme.png" alt="Exemplo: README preenchido">
+            </div>
+            <div class="ph">
+              <small>✅ Dica: um README bem feito melhora muito a perceção do trabalho (organização e clareza).</small>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="footer">
-        <strong>Print sugerido:</strong> ecrã “Create a new repository” com opções selecionadas.
+        <strong>Entregável sugerido (evidências):</strong>
+        1) print do ecrã “Create a new repository” com as opções, 2) print do repositório criado,
+        3) print do README preenchido.
+      </div>
+    </section>
+
+    <!-- PRÓXIMO PASSO -->
+    <section class="section">
+      <h2>Próximo passo</h2>
+      <p class="subtitle">Agora que o repositório existe, vamos organizá-lo e fazer upload de ficheiros e evidências.</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn primary" href="upload.html" style="text-decoration:none">Ir para “Upload & organização”</a>
+        <a class="btn" href="../index.html" style="text-decoration:none">Voltar ao início</a>
       </div>
     </section>
 
