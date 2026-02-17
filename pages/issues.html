@@ -6,6 +6,7 @@
   <title>Issues — Guia GitHub</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
+
 <body>
 <div class="layout">
 
@@ -14,18 +15,18 @@
       <img src="../images/avatar.png" class="avatar" alt="José Carlos Alves">
       <div>
         <h1>Guia Interativo — GitHub</h1>
-        <p>Tutorial prático (exemplo: PAP)</p>
+        <p>Manual prático para projetos (exemplo: PAP)</p>
       </div>
     </div>
 
-        <!-- MENU (sem README) -->
+    <!-- MENU (sem README) -->
     <nav class="nav" id="nav">
       <a href="../index.html"><span>Início</span><span class="pill">Home</span></a>
       <a href="conta.html"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
       <a href="repo.html"><span>Criar repositório</span><span class="pill">Repo</span></a>
-      <a href="upload.html" class="active"><span>Upload & organização</span><span class="pill">Files</span></a>
+      <a href="upload.html"><span>Upload & organização</span><span class="pill">Files</span></a>
       <a href="branches-pr.html"><span>Branches & PR</span><span class="pill">Flow</span></a>
-      <a href="issues.html"><span>Issues</span><span class="pill">Tasks</span></a>
+      <a href="issues.html" class="active"><span>Issues</span><span class="pill">Tasks</span></a>
       <a href="pages.html"><span>GitHub Pages</span><span class="pill">Site</span></a>
       <a href="downloads.html"><span>Downloads & links</span><span class="pill">Links</span></a>
     </nav>
@@ -37,89 +38,278 @@
         <button class="btn" id="unmarkAll">Desmarcar</button>
         <button class="btn danger" id="resetStorage">Reset progresso</button>
       </div>
+      <div style="margin-top:10px; font-size:12px; color:var(--muted)">
+        Dica: usa Issues como “diário de bordo” do projeto — dá evidência real de trabalho.
+      </div>
     </div>
 
     <div class="sidebar-footer">© 2025 José Carlos Alves. Todos os direitos reservados.</div>
   </aside>
 
   <main class="main">
+    <!-- HERO -->
     <header class="hero">
-      <h2>Issues (tarefas e registo de trabalho)</h2>
-      <p>Usa Issues como lista de tarefas, evidência de progresso e organização do projeto (ex.: PAP).</p>
+      <h2>Issues (tarefas, evidências e organização)</h2>
+      <p>
+        As <strong>Issues</strong> são uma das melhores formas de manter uma PAP organizada.
+        Funcionam como <strong>lista de tarefas</strong>, <strong>registo de decisões</strong> e
+        <strong>prova de progresso</strong> ao longo do tempo.
+      </p>
+
+      <p>
+        A ideia é simples: tudo o que “falta fazer” vira uma Issue.
+        Quando resolves, atualizas a Issue (checklist, comentários, anexos/links) e no fim <strong>fechas</strong>.
+        Resultado: tens um histórico claro do que foi feito, quando e porquê.
+      </p>
+
       <div class="meta">
         <span class="tag">✅ Tarefas</span>
-        <span class="tag">🗂️ Organização</span>
-        <span class="tag">📌 Evidência</span>
+        <span class="tag">🧾 Checklists</span>
+        <span class="tag">🏷️ Labels</span>
+        <span class="tag">📌 Evidências</span>
+      </div>
+
+      <!-- IMAGEM DE CABEÇALHO -->
+      <div class="prints" style="margin-top:14px">
+        <div class="ph">
+          <small>Imagem de capa da secção Issues</small>
+          <img src="../images/issues_hero.png" alt="Capa da secção Issues">
+        </div>
       </div>
     </header>
 
+    <!-- PORQUÊ USAR ISSUES -->
     <section class="section">
-      <h2>Passos</h2>
-      <p class="subtitle">Cria Issues com checklist e fecha quando terminar.</p>
+      <h2>Porque é que isto ajuda numa PAP?</h2>
+      <p class="subtitle">Organização + evidência + planeamento = menos stress no final.</p>
 
+      <div class="prints">
+        <div class="ph">
+          <small>Infográfico: porque é que as Issues ajudam numa PAP</small>
+          <img src="../images/issues_porque.png" alt="Porque é que as Issues ajudam numa PAP">
+        </div>
+      </div>
+
+      <div class="hint">
+        Boa prática: usa Issues para tarefas grandes e também para “micro-tarefas” semanais.
+        A regularidade é o que cria a melhor evidência.
+      </div>
+    </section>
+
+    <!-- PASSOS PRINCIPAIS -->
+    <section class="section">
+      <h2>Passos essenciais</h2>
+      <p class="subtitle">Cria Issues, adiciona checklist, liga ao trabalho e fecha com evidência.</p>
+
+      <!-- Aqui o teu infográfico “Passos essenciais” (se quiseres colocar) -->
+      <div class="prints">
+        <div class="ph">
+          <small>Infográfico: passos essenciais (criar Issue → checklist → labels → fechar)</small>
+          <img src="../images/issues_labels_e_fechar.png" alt="Passos essenciais com labels e fecho (opcional)">
+        </div>
+      </div>
+
+      <!-- PASSO 1 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">1</div>
-            <div>
+            <div style="min-width:0">
               <h4>Criar uma Issue</h4>
-              <p>Tab Issues → New issue.</p>
+              <p>Repositório → separador <strong>Issues</strong> → <strong>New issue</strong>.</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="iss-1"> Concluído</label>
         </div>
+
         <div class="content">
           <div class="hint">
-            Título exemplo: <strong>Relatório — Introdução e objetivos</strong>
+            Exemplos de títulos “bons”:
+            <ul style="margin:8px 0 0 18px; color:rgba(255,255,255,.86)">
+              <li><strong>Relatório:</strong> Introdução e objetivos</li>
+              <li><strong>Implementação:</strong> Criar menu e páginas base</li>
+              <li><strong>Testes:</strong> Validar formulário / corrigir erros</li>
+              <li><strong>Documentação:</strong> Atualizar evidências semanais</li>
+            </ul>
           </div>
         </div>
       </div>
 
+      <!-- PASSO 2 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">2</div>
-            <div>
-              <h4>Adicionar checklist na descrição</h4>
-              <p>Ajuda a acompanhar o que falta fazer.</p>
+            <div style="min-width:0">
+              <h4>Adicionar checklist (Markdown)</h4>
+              <p>Transforma a Issue num mini-plano com tarefas concretas.</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="iss-2"> Concluído</label>
         </div>
+
         <div class="content">
           <div class="codebox">
             <div class="codebar">
-              <span>Checklist (Markdown)</span>
-              <button class="btn primary" data-copy="#code-iss">Copiar</button>
+              <span>Checklist (copiar e adaptar)</span>
+              <button class="btn primary" data-copy="#code-iss-check">Copiar</button>
             </div>
-            <pre id="code-iss"><code>- [ ] Escrever introdução
-- [ ] Definir objetivos
-- [ ] Adicionar bibliografia
-- [ ] Inserir evidências (prints)</code></pre>
+            <pre id="code-iss-check"><code>- [ ] Definir objetivo desta parte
+- [ ] Fazer pesquisa / recolher fontes
+- [ ] Implementar / escrever
+- [ ] Rever e corrigir
+- [ ] Adicionar evidências (prints/links)</code></pre>
+          </div>
+
+          <div class="hint">
+            Dica: no final, coloca na Issue links diretos para ficheiros do repo (ex.: PDF em <code>docs/</code>)
+            e para prints em <code>images/</code>.
           </div>
         </div>
       </div>
 
+      <!-- PASSO 3 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">3</div>
-            <div>
-              <h4>Fechar a Issue</h4>
-              <p>Quando terminares, marca como concluída (Close issue).</p>
+            <div style="min-width:0">
+              <h4>Usar Labels para organizar</h4>
+              <p>Labels ajudam a separar fases e prioridades (ex.: documentação, código, urgente).</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="iss-3"> Concluído</label>
         </div>
+
         <div class="content">
           <div class="hint">
-            Dica: Issues fechadas são ótima evidência de trabalho organizado.
+            Sugestão de labels para PAP:
+            <ul style="margin:8px 0 0 18px; color:rgba(255,255,255,.86)">
+              <li><code>documentação</code> • <code>código</code> • <code>testes</code> • <code>design</code></li>
+              <li><code>urgente</code> • <code>importante</code> • <code>opcional</code></li>
+              <li><code>semana-1</code>, <code>semana-2</code>…</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASSO 4 -->
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">4</div>
+            <div style="min-width:0">
+              <h4>Ligar Issues ao trabalho (commits e PR)</h4>
+              <p>Usa <code>Closes #N</code> no PR para fechar automaticamente a Issue.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="iss-4"> Concluído</label>
+        </div>
+
+        <div class="content">
+          <div class="codebox" style="margin-top:10px">
+            <div class="codebar">
+              <span>Texto exemplo (PR)</span>
+              <button class="btn primary" data-copy="#code-iss-close">Copiar</button>
+            </div>
+            <pre id="code-iss-close"><code>Closes #12
+
+Resumo:
+- Adicionada página de contactos
+- Atualizado menu
+- Incluídas evidências em images/</code></pre>
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>Infográfico: fechar Issues automaticamente (PR/commit)</small>
+              <img src="../images/issues_fechar_auto.png" alt="Fechar Issues automaticamente">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASSO 5 -->
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">5</div>
+            <div style="min-width:0">
+              <h4>Fechar a Issue (com evidência)</h4>
+              <p>Antes de fechar, garante checklist completa e links para evidências.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="iss-5"> Concluído</label>
+        </div>
+
+        <div class="content">
+          <div class="prints">
+            <div class="ph">
+              <small>Sumário visual (bom para evidência final)</small>
+              <img src="../images/issues_sumario.png" alt="Sumário — Issues na PAP">
+            </div>
           </div>
         </div>
       </div>
 
       <div class="footer">
-        <strong>Print sugerido:</strong> lista de Issues (abertas e fechadas).
+        <strong>Prints recomendados (mínimo):</strong>
+        1) criação da Issue, 2) checklist, 3) labels, 4) fecho (manual ou automático), 5) lista de Issues abertas/fechadas.
+      </div>
+    </section>
+
+    <!-- MODELO PRONTO A COPIAR -->
+    <section class="section">
+      <h2>Modelo de Issue (pronto a copiar)</h2>
+      <p class="subtitle">Cria uma Issue bem organizada em 30 segundos.</p>
+
+      <div class="prints">
+        <div class="ph">
+          <small>Infográfico: modelo de Issue (pronto a copiar)</small>
+          <img src="../images/issues_modelo.png" alt="Modelo de Issue pronto a copiar">
+        </div>
+      </div>
+
+      <div class="codebox">
+        <div class="codebar">
+          <span>Template</span>
+          <button class="btn primary" data-copy="#code-iss-template">Copiar</button>
+        </div>
+        <pre id="code-iss-template"><code>## Objetivo
+(Explica em 1-2 linhas o que queres concluir.)
+
+## Critérios de sucesso
+- [ ] O resultado final está funcional / completo
+- [ ] Foi testado (breve nota)
+- [ ] Evidências adicionadas (links/prints)
+
+## Tarefas
+- [ ] Tarefa 1
+- [ ] Tarefa 2
+- [ ] Tarefa 3
+
+## Evidências / Links
+- Documento: docs/...
+- Print: images/...
+- (Opcional) PR/commit: link</code></pre>
+      </div>
+
+      <div class="hint">
+        Se quiseres ainda mais “profissional”: usa sempre o mesmo padrão de títulos.
+        Ex.: <code>Relatório:</code> ... • <code>Implementação:</code> ... • <code>Testes:</code> ...
+      </div>
+    </section>
+
+    <!-- DICAS EXTRA -->
+    <section class="section">
+      <h2>Mais dicas e recursos</h2>
+      <p class="subtitle">Ideias para manteres as Issues consistentes e fáceis de avaliar.</p>
+
+      <div class="prints">
+        <div class="ph">
+          <small>Infográfico: mais dicas e recursos</small>
+          <img src="../images/issues_dicas.png" alt="Mais dicas e recursos para Issues">
+        </div>
       </div>
     </section>
 
