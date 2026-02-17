@@ -3,89 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Criar repositório — Guia GitHub</title>
-  <link rel="stylesheet" href="../css/style.css" />
-</head>
-<body>
-<div class="layout">
-
-  <aside class="sidebar">
-    <div class="brand">
-      <img src="../images/avatar.png" class="avatar" alt="José Carlos Alves">
-      <div>
-        <h1>Guia Interativo — GitHub</h1>
-        <p>Tutorial prático (exemplo: PAP)</p>
-      </div>
-    </div>
-
-    <nav class="nav" id="nav">
-      <a href="../index.html"><span>Início</span><span class="pill">Home</span></a>
-      <a href="conta.html"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
-      <a href="repo.html" class="active"><span>Criar repositório</span><span class="pill">Repo</span></a>
-      <a href="upload.html"><span>Upload & organização</span><span class="pill">Files</span></a>
-      <a href="readme.html"><span>README</span><span class="pill">Docs</span></a>
-      <a href="branches-pr.html"><span>Branches & PR</span><span class="pill">Flow</span></a>
-      <a href="issues.html"><span>Issues</span><span class="pill">Tasks</span></a>
-      <a href="pages.html"><span>GitHub Pages</span><span class="pill">Site</span></a>
-      <a href="downloads.html"><span>Downloads & links</span><span class="pill">Links</span></a>
-    </nav>
-
-    <div class="tools">
-      <h3>Ferramentas</h3>
-      <div class="row">
-        <button class="btn primary" id="markAll">Marcar tudo</button>
-        <button class="btn" id="unmarkAll">Desmarcar</button>
-        <button class="btn danger" id="resetStorage">Reset progresso</button>
-      </div>
-    </div>
-
-    <div class="sidebar-footer">© 2025 José Carlos Alves. Todos os direitos reservados.</div>
-  </aside>
-
-  <main class="main">
-    <header class="hero">
-      <h2>Criar repositório</h2>
-      <p>Criação do repositório para a PAP: nome, descrição, visibilidade e ficheiros iniciais.</p>
-      <div class="meta">
-        <span class="tag">📦 Repo</span>
-        <span class="tag">📝 README</span>
-        <span class="tag">🌐 Public</span>
-      </div>
-    </header>
-
-    <section class="section">
-      <h2>Passos</h2>
-      <p class="subtitle">Objetivo: ter o repositório pronto para receber ficheiros e publicar no Pages.</p>
-
-      <div class="step">
-        <div class="top">
-          <div class="left">
-            <div class="badge">1</div>
-            <div>
-              <h4>Criar novo repositório</h4>
-              <p>Escolher nome e descrição.</p>
-            </div>
-          </div>
-          <label class="pill"><input type="checkbox" data-check="repo-1"> Concluído</label>
-        </div>
-        <div class="content">
-          <div class="hint">
-            Link direto: <a href="https://github.com/new" target="_blank" rel="noopener">https://github.com/new</a><br/>
-            Sugestão de nome: <code>pap</code> / <code>projeto-pap</code> / <code>pap-2025</code>
-          </div>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="top">
-          <div class="left"><!doctype html>
-<html lang="pt">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Upload & Organização — Guia GitHub</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
+
 <body>
 <div class="layout">
 
@@ -98,12 +19,12 @@
       </div>
     </div>
 
+    <!-- MENU (sem README) -->
     <nav class="nav" id="nav">
       <a href="../index.html"><span>Início</span><span class="pill">Home</span></a>
       <a href="conta.html"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
       <a href="repo.html"><span>Criar repositório</span><span class="pill">Repo</span></a>
       <a href="upload.html" class="active"><span>Upload & organização</span><span class="pill">Files</span></a>
-      <a href="readme.html"><span>README</span><span class="pill">Docs</span></a>
       <a href="branches-pr.html"><span>Branches & PR</span><span class="pill">Flow</span></a>
       <a href="issues.html"><span>Issues</span><span class="pill">Tasks</span></a>
       <a href="pages.html"><span>GitHub Pages</span><span class="pill">Site</span></a>
@@ -119,49 +40,69 @@
       </div>
     </div>
 
-    <div class="sidebar-footer">© 2025 José Carlos Alves. Todos os direitos reservados.</div>
+    <div class="sidebar-footer">
+      © 2025 José Carlos Alves. Todos os direitos reservados.
+    </div>
   </aside>
 
   <main class="main">
     <header class="hero">
       <h2>Upload & Organização</h2>
-      <p>Organizar o repositório (estrutura de pastas) e carregar ficheiros e evidências (prints, docs, etc.).</p>
+      <p>
+        Nesta página vais criar uma estrutura organizada e fazer upload de ficheiros.
+        A ideia é o repositório ficar “limpo” e fácil de navegar (exemplo: PAP).
+      </p>
       <div class="meta">
-        <span class="tag">📁 Estrutura</span>
+        <span class="tag">📁 Pastas</span>
         <span class="tag">⬆️ Upload</span>
         <span class="tag">🧾 Evidências</span>
       </div>
     </header>
 
     <section class="section">
-      <h2>Estrutura recomendada (exemplo PAP)</h2>
-      <p class="subtitle">Mantém tudo organizado para facilitar trabalho e avaliação.</p>
+      <h2>Estrutura recomendada</h2>
+      <p class="subtitle">Sugestão simples e eficiente para projetos com documentação + evidências.</p>
+
+      <div class="codebox">
+        <div class="codebar">
+          <span>Estrutura</span>
+          <button class="btn primary" data-copy="#code-struct">Copiar</button>
+        </div>
+        <pre id="code-struct"><code>src/       (código)
+docs/      (documentação / relatório)
+images/    (prints e imagens)</code></pre>
+      </div>
+
+      <div class="hint">
+        No GitHub, criar pastas via interface: <strong>Add file → Create new file</strong> e escreve, por exemplo:
+        <code>docs/README.md</code> (o GitHub cria a pasta automaticamente).
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Passos</h2>
+      <p class="subtitle">Segue os passos e coloca prints (opcional) como evidência.</p>
 
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">1</div>
-            <div>
-              <h4>Criar pastas essenciais</h4>
-              <p>Separar código, documentação e imagens.</p>
+            <div style="min-width:0">
+              <h4>Criar as pastas no repositório</h4>
+              <p>Cria <code>src/</code>, <code>docs/</code> e <code>images/</code>.</p>
             </div>
           </div>
-          <label class="pill"><input type="checkbox" data-check="upload-1"> Concluído</label>
+          <label class="pill"><input type="checkbox" data-check="up-1" /> Concluído</label>
         </div>
         <div class="content">
           <div class="hint">
-            Estrutura:
-            <div class="codebox" style="margin-top:10px">
-              <div class="codebar">
-                <span>Estrutura</span>
-                <button class="btn primary" data-copy="#code-up-struct">Copiar</button>
-              </div>
-              <pre id="code-up-struct"><code>src/      (código)
-docs/     (relatório / documentação)
-images/   (prints e imagens)</code></pre>
-            </div>
-            No GitHub, para criar pastas via interface: <strong>Add file → Create new file</strong> e escreve, por exemplo:
-            <code>docs/README.md</code> (o GitHub cria a pasta automaticamente).
+            Forma rápida: cria um ficheiro dentro de cada pasta:
+            <ul style="margin:8px 0 0 18px; color:rgba(255,255,255,.86)">
+              <li><code>src/.keep</code></li>
+              <li><code>docs/.keep</code></li>
+              <li><code>images/.keep</code></li>
+            </ul>
+            (Depois podes apagar os <code>.keep</code> quando já tiveres ficheiros reais.)
           </div>
         </div>
       </div>
@@ -170,22 +111,32 @@ images/   (prints e imagens)</code></pre>
         <div class="top">
           <div class="left">
             <div class="badge">2</div>
-            <div>
+            <div style="min-width:0">
               <h4>Fazer upload de ficheiros</h4>
-              <p>Adicionar documentos, imagens e recursos.</p>
+              <p>Add file → Upload files (para docs, imagens e recursos).</p>
             </div>
           </div>
-          <label class="pill"><input type="checkbox" data-check="upload-2"> Concluído</label>
+          <label class="pill"><input type="checkbox" data-check="up-2" /> Concluído</label>
         </div>
         <div class="content">
           <div class="hint">
-            No repositório: <strong>Add file → Upload files</strong>.<br/>
-            Sugestão:
+            Sugestão de destino:
             <ul style="margin:8px 0 0 18px; color:rgba(255,255,255,.86)">
-              <li>Relatório → <code>docs/</code></li>
-              <li>Imagens/prints → <code>images/</code></li>
-              <li>Código → <code>src/</code></li>
+              <li>Relatório/ficheiros PDF: <code>docs/</code></li>
+              <li>Imagens/prints: <code>images/</code></li>
+              <li>Ficheiros de projeto: <code>src/</code></li>
             </ul>
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: ecrã “Upload files” antes do commit</small>
+              <img src="../images/print_upload_1.png" alt="Print (substituir)"/>
+            </div>
+            <div class="ph">
+              <small>📸 Print sugerido: lista de ficheiros no repo depois do upload</small>
+              <img src="../images/print_upload_2.png" alt="Print (substituir)"/>
+            </div>
           </div>
         </div>
       </div>
@@ -194,35 +145,34 @@ images/   (prints e imagens)</code></pre>
         <div class="top">
           <div class="left">
             <div class="badge">3</div>
-            <div>
-              <h4>Commit message clara</h4>
-              <p>Ao fazer upload, escreve uma mensagem que explique o que mudou.</p>
+            <div style="min-width:0">
+              <h4>Mensagem de commit clara</h4>
+              <p>Descreve o que adicionaste.</p>
             </div>
           </div>
-          <label class="pill"><input type="checkbox" data-check="upload-3"> Concluído</label>
+          <label class="pill"><input type="checkbox" data-check="up-3" /> Concluído</label>
         </div>
         <div class="content">
-          <div class="hint">
-            Exemplos:
-            <div class="codebox" style="margin-top:10px">
-              <div class="codebar">
-                <span>Mensagens</span>
-                <button class="btn primary" data-copy="#code-up-msg">Copiar</button>
-              </div>
-              <pre id="code-up-msg"><code>Adicionar estrutura inicial do projeto
-Adicionar prints de evidência
-Atualizar documentação no docs/</code></pre>
+          <div class="codebox">
+            <div class="codebar">
+              <span>Exemplos</span>
+              <button class="btn primary" data-copy="#code-up-msg">Copiar</button>
             </div>
+            <pre id="code-up-msg"><code>Adicionar estrutura inicial do projeto
+Adicionar documentação em docs/
+Adicionar prints de evidência em images/</code></pre>
           </div>
         </div>
       </div>
 
       <div class="footer">
-        <strong>Prints sugeridos:</strong> (1) árvore de pastas no GitHub, (2) ecrã de upload concluído.
+        <strong>Dica:</strong> Quando tiveres o Pages ativo, podes colocar no <code>docs/</code> ou no site uma secção “Evidências” com links para as imagens.
       </div>
     </section>
 
-    <div class="footer">© 2025 José Carlos Alves. Todos os direitos reservados.</div>
+    <div class="footer">
+      © 2025 José Carlos Alves. Todos os direitos reservados.
+    </div>
   </main>
 
 </div>
@@ -230,5 +180,4 @@ Atualizar documentação no docs/</code></pre>
 <div class="toast" id="toast">Copiado ✅</div>
 <script src="../js/app.js"></script>
 </body>
-</html>
 </html>
