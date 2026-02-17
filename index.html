@@ -3,16 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Guia Interativo — GitHub (com exemplo de PAP)</title>
-
-  <!-- CSS externo -->
+  <title>Guia Interativo — GitHub (exemplo: PAP)</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
   <div class="layout">
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="brand">
         <img src="images/avatar.png" class="avatar" alt="José Carlos Alves">
@@ -23,16 +20,15 @@
       </div>
 
       <nav class="nav" id="nav">
-        <a href="#intro"><span>Introdução</span><span class="pill">Início</span></a>
-        <a href="#conta"><span>1) Conta & Perfil</span><span class="pill">Setup</span></a>
-        <a href="#repo"><span>2) Criar repositório</span><span class="pill">Repo</span></a>
-        <a href="#upload"><span>3) Upload e organização</span><span class="pill">Files</span></a>
-        <a href="#readme"><span>4) README e documentação</span><span class="pill">Docs</span></a>
-        <a href="#branches"><span>5) Branches & Pull Request</span><span class="pill">Flow</span></a>
-        <a href="#issues"><span>6) Issues & Tarefas</span><span class="pill">PM</span></a>
-        <a href="#pages"><span>7) GitHub Pages</span><span class="pill">Site</span></a>
-        <a href="#downloads"><span>8) Downloads para o projeto</span><span class="pill">Links</span></a>
-        <a href="#pap"><span>Checklist PAP</span><span class="pill">Final</span></a>
+        <a href="index.html" class="active"><span>Início</span><span class="pill">Home</span></a>
+        <a href="pages/conta.html"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
+        <a href="pages/repo.html"><span>Criar repositório</span><span class="pill">Repo</span></a>
+        <a href="pages/upload.html"><span>Upload & organização</span><span class="pill">Files</span></a>
+        <a href="pages/readme.html"><span>README</span><span class="pill">Docs</span></a>
+        <a href="pages/branches-pr.html"><span>Branches & PR</span><span class="pill">Flow</span></a>
+        <a href="pages/issues.html"><span>Issues</span><span class="pill">Tasks</span></a>
+        <a href="pages/pages.html"><span>GitHub Pages</span><span class="pill">Site</span></a>
+        <a href="pages/downloads.html"><span>Downloads & links</span><span class="pill">Links</span></a>
       </nav>
 
       <div class="tools">
@@ -43,532 +39,154 @@
           <button class="btn danger" id="resetStorage">Reset progresso</button>
         </div>
         <div style="margin-top:10px; font-size:12px; color:var(--muted)">
-          Dica: podes ir marcando os passos concluídos. O progresso fica guardado no browser.
+          Dica: este manual guarda o progresso no browser.
         </div>
+      </div>
+
+      <div class="sidebar-footer">
+        © 2025 José Carlos Alves. Todos os direitos reservados.
       </div>
     </aside>
 
-    <!-- MAIN -->
     <main class="main">
-      <!-- HERO -->
       <header class="hero" id="intro">
-        <h2>Guia Interativo — GitHub</h2>
+        <h2>Manual Interativo de GitHub</h2>
         <p>
-          Manual prático para criar e gerir um repositório no GitHub, organizar trabalho,
-          colaborar (branches + pull requests) e publicar um site no GitHub Pages.
+          Guia passo-a-passo para criares e organizares um repositório no GitHub,
+          usares branches e pull requests, gerir tarefas com Issues e publicar um site no GitHub Pages.
           <br/><br/>
-          <strong>Exemplo aplicado:</strong> organização de uma <strong>PAP</strong> (documentação + versões + entrega).
+          <strong>Exemplo aplicado:</strong> organização de uma <strong>PAP</strong> (documentação + evidências + entrega).
         </p>
-
         <div class="meta">
           <span class="tag">🌐 GitHub</span>
           <span class="tag">✅ Passo a passo</span>
           <span class="tag">🧩 Exemplos + prints</span>
-          <span class="tag">🚀 Publicar no Pages</span>
+          <span class="tag">🚀 Pages</span>
         </div>
       </header>
 
-      <!-- CARDS: A começar -->
-      <section class="grid">
-        <div class="card">
-          <div class="head">
-            <div>
-              <h3>Antes de começar</h3>
-              <p>Conta, email verificado e um repositório para a PAP.</p>
-            </div>
-            <span class="pill">Checklist</span>
-          </div>
+      <section class="section">
+        <h2>Começar</h2>
+        <p class="subtitle">Escolhe um tópico. Cada página tem passos e locais para colocar prints.</p>
 
-          <div class="body">
-            <div class="check">
-              <input type="checkbox" data-check="prep-account" />
+        <section class="grid">
+          <div class="card">
+            <div class="head">
               <div>
-                <strong>Tenho conta no GitHub</strong><br/>
-                <span style="color:var(--muted)">Se ainda não tiveres: criar conta e confirmar email.</span>
+                <h3>1) Conta & Perfil</h3>
+                <p>Criar conta, confirmar email e preparar perfil.</p>
               </div>
+              <a class="pill" href="pages/conta.html">Abrir</a>
             </div>
+            <div class="body">
+              <img src="images/ic_conta.png" alt="" style="max-width:72px; opacity:.9">
+            </div>
+          </div>
 
-            <div class="check">
-              <input type="checkbox" data-check="prep-profile" />
+          <div class="card">
+            <div class="head">
               <div>
-                <strong>Perfil atualizado</strong><br/>
-                <span style="color:var(--muted)">Nome + foto (opcional) ajudam na identificação do trabalho.</span>
+                <h3>2) Criar repositório</h3>
+                <p>Nome, visibilidade, README e boas práticas.</p>
               </div>
+              <a class="pill" href="pages/repo.html">Abrir</a>
+            </div>
+            <div class="body">
+              <img src="images/ic_repo.png" alt="" style="max-width:72px; opacity:.9">
             </div>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="head">
-            <div>
-              <h3>Regras rápidas (boa prática)</h3>
-              <p>Deixa o repositório “limpo” e fácil de avaliar.</p>
-            </div>
-            <span class="pill">Boas práticas</span>
-          </div>
-
-          <div class="body">
-            <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
-              <li>README com objetivo, estrutura e links.</li>
-              <li>Pastas bem organizadas: <code>docs/</code>, <code>src/</code>, <code>images/</code>.</li>
-              <li>Commits com mensagens claras (ex.: “Adicionar introdução ao relatório”).</li>
-              <li>Usar Issues para tarefas e Pull Requests para integrar mudanças.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- 1) Conta & Perfil -->
-      <section class="section" id="conta">
-        <h2>1) Conta & Perfil</h2>
-        <p class="subtitle">Configurar a conta e deixar o perfil pronto para usar o GitHub em projeto.</p>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">1</div>
-              <div style="min-width:0">
-                <h4>Criar conta / Confirmar email</h4>
-                <p>Sem email confirmado podes ter limitações em algumas ações.</p>
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>3) Upload & organização</h3>
+                <p>Estrutura de pastas e evidências.</p>
               </div>
+              <a class="pill" href="pages/upload.html">Abrir</a>
             </div>
-            <label class="pill"><input type="checkbox" data-check="c1" /> Concluído</label>
-          </div>
-          <div class="content">
-            <div class="hint">
-              Link: <a href="https://github.com/join" target="_blank" rel="noopener">Criar conta GitHub</a><br/>
-              Depois: Settings → Emails → confirmar/verificar.
+            <div class="body">
+              <img src="images/ic_upload.png" alt="" style="max-width:72px; opacity:.9">
             </div>
           </div>
-        </div>
 
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">2</div>
-              <div style="min-width:0">
-                <h4>Atualizar perfil</h4>
-                <p>Adicionar nome e (opcional) foto para identificar o trabalho.</p>
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>4) README</h3>
+                <p>Modelo para projeto tipo PAP + links.</p>
               </div>
+              <a class="pill" href="pages/readme.html">Abrir</a>
             </div>
-            <label class="pill"><input type="checkbox" data-check="c2" /> Concluído</label>
-          </div>
-          <div class="content">
-            <div class="hint">
-              Link: <a href="https://github.com/settings/profile" target="_blank" rel="noopener">Settings → Profile</a>
+            <div class="body">
+              <img src="images/ic_readme.png" alt="" style="max-width:72px; opacity:.9">
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- 2) Criar Repositório -->
-      <section class="section" id="repo">
-        <h2>2) Criar repositório</h2>
-        <p class="subtitle">Criar o repositório onde vais guardar a PAP (código + docs + recursos).</p>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">1</div>
-              <div style="min-width:0">
-                <h4>Nome do repositório</h4>
-                <p>Escolhe um nome simples e claro.</p>
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>5) Branches & PR</h3>
+                <p>Fluxo de trabalho com Pull Requests.</p>
               </div>
+              <a class="pill" href="pages/branches-pr.html">Abrir</a>
             </div>
-            <label class="pill"><input type="checkbox" data-check="r1" /> Concluído</label>
-          </div>
-          <div class="content">
-            <div class="hint">
-              Sugestões: <code>pap</code>, <code>pap-projeto</code>, <code>projeto-pap</code>, <code>pap-2025</code><br/>
-              Link: <a href="https://github.com/new" target="_blank" rel="noopener">Create a new repository</a>
+            <div class="body">
+              <img src="images/ic_branch.png" alt="" style="max-width:72px; opacity:.9">
             </div>
           </div>
-        </div>
 
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">2</div>
-              <div style="min-width:0">
-                <h4>Configurações recomendadas</h4>
-                <p>Public (para Pages) e README ligado.</p>
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>6) Issues</h3>
+                <p>Lista de tarefas e evidência de trabalho.</p>
               </div>
+              <a class="pill" href="pages/issues.html">Abrir</a>
             </div>
-            <label class="pill"><input type="checkbox" data-check="r2" /> Concluído</label>
+            <div class="body">
+              <img src="images/ic_issues.png" alt="" style="max-width:72px; opacity:.9">
+            </div>
           </div>
-          <div class="content">
-            <div class="hint">
-              ✅ Visibility: <strong>Public</strong><br/>
-              ✅ Add README: <strong>ON</strong><br/>
-              (Opcional) Add .gitignore / License
-            </div>
 
-            <div class="prints">
-              <div class="ph">
-                <small>📸 Print sugerido: ecrã “Create a new repository”</small>
-                <img src="images/print_create_repo.png" alt="Print (substituir)"/>
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>7) GitHub Pages</h3>
+                <p>Publicar site a partir do repositório.</p>
               </div>
-              <div class="ph">
-                <small>Coloca o teu print em <code>images/</code> e atualiza o <code>src</code>.</small>
-                <div class="hint" style="margin:8px 0 0 0">
-                  Ex.: <code>images/print_create_repo.png</code>
-                </div>
+              <a class="pill" href="pages/pages.html">Abrir</a>
+            </div>
+            <div class="body">
+              <img src="images/ic_pages.png" alt="" style="max-width:72px; opacity:.9">
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>8) Downloads & links</h3>
+                <p>Ferramentas e como sacar o repo.</p>
               </div>
+              <a class="pill" href="pages/downloads.html">Abrir</a>
             </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- 3) Upload & Organização -->
-      <section class="section" id="upload">
-        <h2>3) Upload e organização</h2>
-        <p class="subtitle">Organizar a estrutura do projeto e adicionar ficheiros no GitHub.</p>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">1</div>
-              <div style="min-width:0">
-                <h4>Criar pastas do projeto</h4>
-                <p>Estrutura recomendada (PAP).</p>
-              </div>
-            </div>
-            <label class="pill"><input type="checkbox" data-check="u1" /> Concluído</label>
-          </div>
-
-          <div class="content">
-            <div class="hint">
-              Estrutura recomendada:
-              <div class="codebox" style="margin-top:10px">
-                <div class="codebar">
-                  <span>Estrutura</span>
-                  <button class="btn primary" data-copy="#code-struct">Copiar</button>
-                </div>
-                <pre id="code-struct"><code>pap/
-  README.md
-  index.html
-  src/
-  docs/
-  images/</code></pre>
-              </div>
-              No GitHub: <strong>Add file → Create new file</strong> para criar pastas (ex.: <code>docs/README.md</code>).
+            <div class="body">
+              <img src="images/ic_downloads.png" alt="" style="max-width:72px; opacity:.9">
             </div>
           </div>
-        </div>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">2</div>
-              <div style="min-width:0">
-                <h4>Upload de ficheiros</h4>
-                <p>Adicionar documentos, imagens e ficheiros do projeto.</p>
-              </div>
-            </div>
-            <label class="pill"><input type="checkbox" data-check="u2" /> Concluído</label>
-          </div>
-
-          <div class="content">
-            <div class="hint">
-              No repositório: <strong>Add file → Upload files</strong>.<br/>
-              Boa prática: colocar prints em <code>images/</code> e relatórios em <code>docs/</code>.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4) README -->
-      <section class="section" id="readme">
-        <h2>4) README e documentação</h2>
-        <p class="subtitle">O README é a “capa” do projeto: explica o que é e como usar/avaliar.</p>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">1</div>
-              <div style="min-width:0">
-                <h4>Modelo de README (PAP)</h4>
-                <p>Copia e adapta ao teu projeto.</p>
-              </div>
-            </div>
-            <label class="pill"><input type="checkbox" data-check="re1" /> Concluído</label>
-          </div>
-
-          <div class="content">
-            <div class="codebox">
-              <div class="codebar">
-                <span>README.md (modelo)</span>
-                <button class="btn primary" data-copy="#code-readme">Copiar</button>
-              </div>
-              <pre id="code-readme"><code># PAP — [Título do Projeto]
-
-## Objetivo
-Breve descrição do problema e do que o projeto pretende resolver.
-
-## Estrutura do repositório
-- `src/` — código do projeto
-- `docs/` — documentação (relatório, evidências)
-- `images/` — prints e imagens
-
-## Como aceder
-- Repositório: https://github.com/TEU_USER/TEU_REPO
-- Website (GitHub Pages): https://TEU_USER.github.io/TEU_REPO/
-
-## Evidências
-Coloca aqui prints importantes (ou links para `images/`).</code></pre>
-            </div>
-
-            <div class="hint">
-              Dica: no GitHub podes editar o README clicando no ícone do lápis ✏️.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5) Branches & PR -->
-      <section class="section" id="branches">
-        <h2>5) Branches & Pull Requests</h2>
-        <p class="subtitle">Trabalhar em mudanças sem mexer diretamente na main e integrar com Pull Request.</p>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">1</div>
-              <div style="min-width:0">
-                <h4>Criar branch no GitHub</h4>
-                <p>No dropdown da branch (main) cria uma nova branch.</p>
-              </div>
-            </div>
-            <label class="pill"><input type="checkbox" data-check="b1" /> Concluído</label>
-          </div>
-          <div class="content">
-            <div class="hint">
-              Exemplo de branch: <code>docs-relatorio</code> ou <code>pagina-contactos</code><br/>
-              No topo do repositório: selecionar branch → escrever nome → “Create branch”.
-            </div>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">2</div>
-              <div style="min-width:0">
-                <h4>Abrir Pull Request</h4>
-                <p>Comparar branch com main e pedir merge.</p>
-              </div>
-            </div>
-            <label class="pill"><input type="checkbox" data-check="b2" /> Concluído</label>
-          </div>
-          <div class="content">
-            <div class="hint">
-              Tab <strong>Pull requests</strong> → New pull request → base: <code>main</code> ← compare: tua branch.<br/>
-              Escrever um título e descrição clara (o que mudou e porquê).
-            </div>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">3</div>
-              <div style="min-width:0">
-                <h4>Merge do Pull Request</h4>
-                <p>Integrar a mudança na main.</p>
-              </div>
-            </div>
-            <label class="pill"><input type="checkbox" data-check="b3" /> Concluído</label>
-          </div>
-          <div class="content">
-            <div class="hint">
-              No PR: <strong>Merge pull request</strong> → Confirm merge.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 6) Issues -->
-      <section class="section" id="issues">
-        <h2>6) Issues & Tarefas</h2>
-        <p class="subtitle">Usa Issues como lista de tarefas e registo de trabalho.</p>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">1</div>
-              <div style="min-width:0">
-                <h4>Criar Issue para uma tarefa</h4>
-                <p>Ex.: “Adicionar introdução ao relatório”</p>
-              </div>
-            </div>
-            <label class="pill"><input type="checkbox" data-check="i1" /> Concluído</label>
-          </div>
-          <div class="content">
-            <div class="hint">
-              Tab <strong>Issues</strong> → New issue.<br/>
-              Usa checklist:
-              <div class="codebox" style="margin-top:10px">
-                <div class="codebar">
-                  <span>Checklist (Markdown)</span>
-                  <button class="btn primary" data-copy="#code-issue">Copiar</button>
-                </div>
-                <pre id="code-issue"><code>- [ ] Escrever introdução
-- [ ] Inserir objetivos
-- [ ] Adicionar bibliografia</code></pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 7) Pages -->
-      <section class="section" id="pages">
-        <h2>7) GitHub Pages</h2>
-        <p class="subtitle">Publicar um site a partir do teu repositório (ex.: manual, relatório, demonstração).</p>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">1</div>
-              <div style="min-width:0">
-                <h4>Ativar Pages</h4>
-                <p>Settings → Pages → Deploy from branch → main / root.</p>
-              </div>
-            </div>
-            <label class="pill"><input type="checkbox" data-check="p1" /> Concluído</label>
-          </div>
-          <div class="content">
-            <div class="hint">
-              Depois aparece um link do tipo:
-              <code>https://TEU_USER.github.io/TEU_REPO/</code><br/>
-              O GitHub abre automaticamente o <strong>index.html</strong>.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 8) Downloads / Links -->
-      <section class="section" id="downloads">
-        <h2>8) Downloads para o projeto</h2>
-        <p class="subtitle">Links úteis para instalar ferramentas e descarregar o repositório.</p>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">1</div>
-              <div style="min-width:0">
-                <h4>Links oficiais</h4>
-                <p>Aqui estão os links mais usados.</p>
-              </div>
-            </div>
-            <label class="pill"><input type="checkbox" data-check="dl1" /> Concluído</label>
-          </div>
-
-          <div class="content">
-            <div class="hint">
-              ✅ GitHub (conta): <a href="https://github.com/join" target="_blank" rel="noopener">https://github.com/join</a><br/>
-              ✅ GitHub Desktop: <a href="https://desktop.github.com/" target="_blank" rel="noopener">https://desktop.github.com/</a><br/>
-              ✅ Git (download): <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a><br/>
-              ✅ GitHub Docs: <a href="https://docs.github.com/" target="_blank" rel="noopener">https://docs.github.com/</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">2</div>
-              <div style="min-width:0">
-                <h4>Como descarregar o repositório</h4>
-                <p>Para ter uma cópia do projeto no computador.</p>
-              </div>
-            </div>
-            <label class="pill"><input type="checkbox" data-check="dl2" /> Concluído</label>
-          </div>
-
-          <div class="content">
-            <div class="hint">
-              No repositório: botão <strong>Code</strong> → <strong>Download ZIP</strong>.<br/>
-              Alternativa: usar GitHub Desktop para “Clone repository”.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PAP checklist -->
-      <section class="section" id="pap">
-        <h2>Checklist PAP</h2>
-        <p class="subtitle">Lista final para garantir que o repositório está pronto para entrega/avaliação.</p>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">1</div>
-              <div style="min-width:0">
-                <h4>README completo</h4>
-                <p>Objetivo, estrutura, links e evidências.</p>
-              </div>
-            </div>
-            <label class="pill"><input type="checkbox" data-check="pap1" /> Concluído</label>
-          </div>
-          <div class="content">
-            <div class="hint">
-              Inclui: objetivo, estrutura, links (repo + pages) e prints importantes.
-            </div>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">2</div>
-              <div style="min-width:0">
-                <h4>Evidências (prints) organizadas</h4>
-                <p>Guardar prints em <code>images/</code> e referir no README.</p>
-              </div>
-            </div>
-            <label class="pill"><input type="checkbox" data-check="pap2" /> Concluído</label>
-          </div>
-          <div class="content">
-            <div class="hint">
-              Exemplos: criação de repo, upload, PR aberto, Pages ativado.
-            </div>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="top">
-            <div class="left">
-              <div class="badge">3</div>
-              <div style="min-width:0">
-                <h4>Pages publicado (se aplicável)</h4>
-                <p>Site a abrir corretamente e link no README.</p>
-              </div>
-            </div>
-            <label class="pill"><input type="checkbox" data-check="pap3" /> Concluído</label>
-          </div>
-          <div class="content">
-            <div class="hint">
-              Confirma o link do Pages e que o <code>index.html</code> abre bem.
-            </div>
-          </div>
-        </div>
+        </section>
 
         <div class="footer">
-          <strong>Entrega sugerida:</strong> link do repositório + link do Pages + PDF com prints (opcional).
+          Se quiseres, podes colocar um banner em <code>images/banner.png</code> e inserir aqui no topo.
         </div>
       </section>
 
       <div class="footer">
-        <strong>Notas:</strong> Este guia guarda o progresso no teu browser (localStorage).
+        <strong>Copyright:</strong> © 2025 José Carlos Alves. Todos os direitos reservados.
       </div>
     </main>
   </div>
 
   <div class="toast" id="toast">Copiado ✅</div>
-
-  <!-- JS externo -->
   <script src="js/app.js"></script>
 </body>
 </html>

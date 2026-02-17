@@ -1,0 +1,130 @@
+﻿<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Downloads & Links — Guia GitHub</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="../images/avatar.png" class="avatar" alt="José Carlos Alves">
+      <div>
+        <h1>Guia Interativo — GitHub</h1>
+        <p>Tutorial prático (exemplo: PAP)</p>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav">
+      <a href="../index.html"><span>Início</span><span class="pill">Home</span></a>
+      <a href="conta.html"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
+      <a href="repo.html"><span>Criar repositório</span><span class="pill">Repo</span></a>
+      <a href="upload.html"><span>Upload & organização</span><span class="pill">Files</span></a>
+      <a href="readme.html"><span>README</span><span class="pill">Docs</span></a>
+      <a href="branches-pr.html"><span>Branches & PR</span><span class="pill">Flow</span></a>
+      <a href="issues.html"><span>Issues</span><span class="pill">Tasks</span></a>
+      <a href="pages.html"><span>GitHub Pages</span><span class="pill">Site</span></a>
+      <a href="downloads.html" class="active"><span>Downloads & links</span><span class="pill">Links</span></a>
+    </nav>
+
+    <div class="tools">
+      <h3>Ferramentas</h3>
+      <div class="row">
+        <button class="btn primary" id="markAll">Marcar tudo</button>
+        <button class="btn" id="unmarkAll">Desmarcar</button>
+        <button class="btn danger" id="resetStorage">Reset progresso</button>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">© 2025 José Carlos Alves. Todos os direitos reservados.</div>
+  </aside>
+
+  <main class="main">
+    <header class="hero">
+      <h2>Downloads & Links úteis</h2>
+      <p>Ferramentas recomendadas e formas de descarregar o repositório (ZIP ou GitHub Desktop).</p>
+      <div class="meta">
+        <span class="tag">⬇️ Downloads</span>
+        <span class="tag">🧰 Ferramentas</span>
+        <span class="tag">📚 Docs</span>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Links oficiais</h2>
+      <p class="subtitle">Usa sempre fontes oficiais.</p>
+
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">1</div>
+            <div>
+              <h4>Ferramentas</h4>
+              <p>Instalações e documentação.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="dl-1"> Concluído</label>
+        </div>
+        <div class="content">
+          <div class="hint">
+            ✅ Criar conta GitHub: <a href="https://github.com/join" target="_blank" rel="noopener">https://github.com/join</a><br/>
+            ✅ GitHub Desktop: <a href="https://desktop.github.com/" target="_blank" rel="noopener">https://desktop.github.com/</a><br/>
+            ✅ Git (download): <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a><br/>
+            ✅ GitHub Docs: <a href="https://docs.github.com/" target="_blank" rel="noopener">https://docs.github.com/</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">2</div>
+            <div>
+              <h4>Descarregar o repositório (ZIP)</h4>
+              <p>Útil para ter uma cópia rápida.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="dl-2"> Concluído</label>
+        </div>
+        <div class="content">
+          <div class="hint">
+            No repositório: botão <strong>Code</strong> → <strong>Download ZIP</strong>.
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">3</div>
+            <div>
+              <h4>Clonar com GitHub Desktop</h4>
+              <p>Recomendado para trabalhar com sincronização.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="dl-3"> Concluído</label>
+        </div>
+        <div class="content">
+          <div class="hint">
+            Code → Open with GitHub Desktop → escolher pasta local → Clone.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <strong>Print sugerido:</strong> menu “Code” com Download ZIP / Open with Desktop.
+      </div>
+    </section>
+
+    <div class="footer">© 2025 José Carlos Alves. Todos os direitos reservados.</div>
+  </main>
+
+</div>
+
+<div class="toast" id="toast">Copiado ✅</div>
+<script src="../js/app.js"></script>
+</body>
+</html>

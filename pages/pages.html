@@ -1,0 +1,131 @@
+﻿<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GitHub Pages — Guia GitHub</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="../images/avatar.png" class="avatar" alt="José Carlos Alves">
+      <div>
+        <h1>Guia Interativo — GitHub</h1>
+        <p>Tutorial prático (exemplo: PAP)</p>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav">
+      <a href="../index.html"><span>Início</span><span class="pill">Home</span></a>
+      <a href="conta.html"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
+      <a href="repo.html"><span>Criar repositório</span><span class="pill">Repo</span></a>
+      <a href="upload.html"><span>Upload & organização</span><span class="pill">Files</span></a>
+      <a href="readme.html"><span>README</span><span class="pill">Docs</span></a>
+      <a href="branches-pr.html"><span>Branches & PR</span><span class="pill">Flow</span></a>
+      <a href="issues.html"><span>Issues</span><span class="pill">Tasks</span></a>
+      <a href="pages.html" class="active"><span>GitHub Pages</span><span class="pill">Site</span></a>
+      <a href="downloads.html"><span>Downloads & links</span><span class="pill">Links</span></a>
+    </nav>
+
+    <div class="tools">
+      <h3>Ferramentas</h3>
+      <div class="row">
+        <button class="btn primary" id="markAll">Marcar tudo</button>
+        <button class="btn" id="unmarkAll">Desmarcar</button>
+        <button class="btn danger" id="resetStorage">Reset progresso</button>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">© 2025 José Carlos Alves. Todos os direitos reservados.</div>
+  </aside>
+
+  <main class="main">
+    <header class="hero">
+      <h2>GitHub Pages</h2>
+      <p>Publicar um site a partir do repositório (ex.: manual, documentação ou página do projeto).</p>
+      <div class="meta">
+        <span class="tag">🌐 Site</span>
+        <span class="tag">⚙️ Settings</span>
+        <span class="tag">🚀 Deploy</span>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Passos</h2>
+      <p class="subtitle">Objetivo: o site abrir automaticamente em <code>...github.io/...</code> com o <code>index.html</code>.</p>
+
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">1</div>
+            <div>
+              <h4>Confirmar o ficheiro index.html</h4>
+              <p>O Pages abre o <code>index.html</code> na raiz do repositório.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="pg-1"> Concluído</label>
+        </div>
+        <div class="content">
+          <div class="hint">
+            Confirma que tens: <code>/index.html</code> (na raiz do repo).
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">2</div>
+            <div>
+              <h4>Ativar GitHub Pages</h4>
+              <p>Settings → Pages → Deploy from branch.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="pg-2"> Concluído</label>
+        </div>
+        <div class="content">
+          <div class="hint">
+            Settings → Pages<br/>
+            Source: <strong>Deploy from a branch</strong><br/>
+            Branch: <strong>main</strong> | Folder: <strong>/(root)</strong><br/>
+            Depois: <strong>Save</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">3</div>
+            <div>
+              <h4>Abrir o link do site</h4>
+              <p>O GitHub mostra o URL do Pages.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="pg-3"> Concluído</label>
+        </div>
+        <div class="content">
+          <div class="hint">
+            O link será parecido com: <code>https://TEU_USER.github.io/TEU_REPO/</code><br/>
+            Coloca esse link no README.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <strong>Prints sugeridos:</strong> (1) Settings → Pages configurado, (2) link do site.
+      </div>
+    </section>
+
+    <div class="footer">© 2025 José Carlos Alves. Todos os direitos reservados.</div>
+  </main>
+
+</div>
+
+<div class="toast" id="toast">Copiado ✅</div>
+<script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Issues — Guia GitHub</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="../images/avatar.png" class="avatar" alt="José Carlos Alves">
+      <div>
+        <h1>Guia Interativo — GitHub</h1>
+        <p>Tutorial prático (exemplo: PAP)</p>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav">
+      <a href="../index.html"><span>Início</span><span class="pill">Home</span></a>
+      <a href="conta.html"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
+      <a href="repo.html"><span>Criar repositório</span><span class="pill">Repo</span></a>
+      <a href="upload.html"><span>Upload & organização</span><span class="pill">Files</span></a>
+      <a href="readme.html"><span>README</span><span class="pill">Docs</span></a>
+      <a href="branches-pr.html"><span>Branches & PR</span><span class="pill">Flow</span></a>
+      <a href="issues.html" class="active"><span>Issues</span><span class="pill">Tasks</span></a>
+      <a href="pages.html"><span>GitHub Pages</span><span class="pill">Site</span></a>
+      <a href="downloads.html"><span>Downloads & links</span><span class="pill">Links</span></a>
+    </nav>
+
+    <div class="tools">
+      <h3>Ferramentas</h3>
+      <div class="row">
+        <button class="btn primary" id="markAll">Marcar tudo</button>
+        <button class="btn" id="unmarkAll">Desmarcar</button>
+        <button class="btn danger" id="resetStorage">Reset progresso</button>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">© 2025 José Carlos Alves. Todos os direitos reservados.</div>
+  </aside>
+
+  <main class="main">
+    <header class="hero">
+      <h2>Issues (tarefas e registo de trabalho)</h2>
+      <p>Usa Issues como lista de tarefas, evidência de progresso e organização do projeto (ex.: PAP).</p>
+      <div class="meta">
+        <span class="tag">✅ Tarefas</span>
+        <span class="tag">🗂️ Organização</span>
+        <span class="tag">📌 Evidência</span>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Passos</h2>
+      <p class="subtitle">Cria Issues com checklist e fecha quando terminar.</p>
+
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">1</div>
+            <div>
+              <h4>Criar uma Issue</h4>
+              <p>Tab Issues → New issue.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="iss-1"> Concluído</label>
+        </div>
+        <div class="content">
+          <div class="hint">
+            Título exemplo: <strong>Relatório — Introdução e objetivos</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">2</div>
+            <div>
+              <h4>Adicionar checklist na descrição</h4>
+              <p>Ajuda a acompanhar o que falta fazer.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="iss-2"> Concluído</label>
+        </div>
+        <div class="content">
+          <div class="codebox">
+            <div class="codebar">
+              <span>Checklist (Markdown)</span>
+              <button class="btn primary" data-copy="#code-iss">Copiar</button>
+            </div>
+            <pre id="code-iss"><code>- [ ] Escrever introdução
+- [ ] Definir objetivos
+- [ ] Adicionar bibliografia
+- [ ] Inserir evidências (prints)</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">3</div>
+            <div>
+              <h4>Fechar a Issue</h4>
+              <p>Quando terminares, marca como concluída (Close issue).</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="iss-3"> Concluído</label>
+        </div>
+        <div class="content">
+          <div class="hint">
+            Dica: Issues fechadas são ótima evidência de trabalho organizado.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <strong>Print sugerido:</strong> lista de Issues (abertas e fechadas).
+      </div>
+    </section>
+
+    <div class="footer">© 2025 José Carlos Alves. Todos os direitos reservados.</div>
+  </main>
+
+</div>
+
+<div class="toast" id="toast">Copiado ✅</div>
+<script src="../js/app.js"></script>
+</body>
+</html>
