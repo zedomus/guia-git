@@ -14,7 +14,7 @@
       <img src="../images/avatar.png" class="avatar" alt="José Carlos Alves">
       <div>
         <h1>Guia Interativo — GitHub</h1>
-        <p>Tutorial prático (exemplo: PAP)</p>
+        <p>Manual prático para projetos (exemplo: PAP)</p>
       </div>
     </div>
 
@@ -23,10 +23,10 @@
       <a href="../index.html"><span>Início</span><span class="pill">Home</span></a>
       <a href="conta.html"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
       <a href="repo.html"><span>Criar repositório</span><span class="pill">Repo</span></a>
-      <a href="upload.html" class="active"><span>Upload & organização</span><span class="pill">Files</span></a>
+      <a href="upload.html"><span>Upload & organização</span><span class="pill">Files</span></a>
       <a href="branches-pr.html"><span>Branches & PR</span><span class="pill">Flow</span></a>
       <a href="issues.html"><span>Issues</span><span class="pill">Tasks</span></a>
-      <a href="pages.html"><span>GitHub Pages</span><span class="pill">Site</span></a>
+      <a href="pages.html" class="active"><span>GitHub Pages</span><span class="pill">Site</span></a>
       <a href="downloads.html"><span>Downloads & links</span><span class="pill">Links</span></a>
     </nav>
 
@@ -37,86 +37,271 @@
         <button class="btn" id="unmarkAll">Desmarcar</button>
         <button class="btn danger" id="resetStorage">Reset progresso</button>
       </div>
+      <div style="margin-top:10px; font-size:12px; color:var(--muted)">
+        Dica: o Pages é ótimo para publicar o “site/relatório” da PAP e ter um link para entregar.
+      </div>
     </div>
 
     <div class="sidebar-footer">© 2025 José Carlos Alves. Todos os direitos reservados.</div>
   </aside>
 
   <main class="main">
+
+    <!-- HERO -->
     <header class="hero">
-      <h2>GitHub Pages</h2>
-      <p>Publicar um site a partir do repositório (ex.: manual, documentação ou página do projeto).</p>
+      <h2>GitHub Pages (publicar o teu site)</h2>
+      <p>
+        O <strong>GitHub Pages</strong> permite publicar um site diretamente do repositório
+        (ex.: manual, documentação, página do projeto ou portefólio da PAP).
+      </p>
+      <p>
+        Objetivo: ter um link do tipo <code>https://TEU_USER.github.io/TEU_REPO/</code> que abre o teu
+        <code>index.html</code> e serve como evidência/entrega.
+      </p>
+
       <div class="meta">
         <span class="tag">🌐 Site</span>
         <span class="tag">⚙️ Settings</span>
         <span class="tag">🚀 Deploy</span>
+        <span class="tag">🔗 Link</span>
+      </div>
+
+      <!-- IMAGEM DE CABEÇALHO -->
+      <div class="prints" style="margin-top:14px">
+        <div class="ph">
+          <small>Imagem de capa (opcional) — coloca em <code>images/</code></small>
+          <img src="../images/pages_hero.png" alt="Imagem de capa da secção GitHub Pages">
+        </div>
       </div>
     </header>
 
+    <!-- ANTES DE COMEÇAR -->
     <section class="section">
-      <h2>Passos</h2>
-      <p class="subtitle">Objetivo: o site abrir automaticamente em <code>...github.io/...</code> com o <code>index.html</code>.</p>
+      <h2>Antes de começar</h2>
+      <p class="subtitle">Checklist rápida para evitar o clássico “404” no Pages.</p>
 
+      <div class="grid">
+        <div class="card">
+          <div class="head">
+            <div>
+              <h3>Ficheiros essenciais</h3>
+              <p>O Pages precisa de um ponto de entrada.</p>
+            </div>
+            <span class="pill">Base</span>
+          </div>
+          <div class="body">
+            <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+              <li><code>/index.html</code> na raiz do repositório (recomendado).</li>
+              <li>CSS/JS com caminhos corretos (ex.: <code>css/style.css</code>).</li>
+              <li>Imagens na pasta <code>images/</code> com nomes iguais aos do HTML.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="head">
+            <div>
+              <h3>Dica importante</h3>
+              <p>Paths relativos evitam problemas.</p>
+            </div>
+            <span class="pill">Boas práticas</span>
+          </div>
+          <div class="body">
+            <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+              <li>Evita caminhos absolutos (ex.: <code>/css/style.css</code>).</li>
+              <li>Prefere caminhos relativos (ex.: <code>./css/style.css</code>).</li>
+              <li>Se usares pastas, confirma links e imagens em todas as páginas.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="hint">
+        Se o site não abrir logo, costuma ser apenas “deploy a processar” ou um caminho errado para CSS/imagens.
+      </div>
+    </section>
+
+    <!-- PASSOS -->
+    <section class="section">
+      <h2>Passos essenciais</h2>
+      <p class="subtitle">Configurar o Pages, aguardar o deploy e publicar o link no README.</p>
+
+      <!-- PASSO 1 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">1</div>
-            <div>
-              <h4>Confirmar o ficheiro index.html</h4>
-              <p>O Pages abre o <code>index.html</code> na raiz do repositório.</p>
+            <div style="min-width:0">
+              <h4>Confirmar o <code>index.html</code></h4>
+              <p>O Pages vai abrir o <code>index.html</code> (normalmente na raiz do repositório).</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="pg-1"> Concluído</label>
         </div>
+
         <div class="content">
           <div class="hint">
             Confirma que tens: <code>/index.html</code> (na raiz do repo).
+            <br/>
+            Se não tiveres, cria um ficheiro simples e faz commit.
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: árvore do repositório com o <code>index.html</code> na raiz</small>
+              <img src="../images/pages_01.png" alt="Print index.html na raiz (substituir)">
+            </div>
+            <div class="ph">
+              <small>📸 Print sugerido: abrir o <code>index.html</code> no GitHub (preview do ficheiro)</small>
+              <img src="../images/pages_02.png" alt="Print ficheiro index.html (substituir)">
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- PASSO 2 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">2</div>
-            <div>
-              <h4>Ativar GitHub Pages</h4>
-              <p>Settings → Pages → Deploy from branch.</p>
+            <div style="min-width:0">
+              <h4>Ativar o GitHub Pages</h4>
+              <p>Settings → Pages → escolher origem e branch.</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="pg-2"> Concluído</label>
         </div>
+
         <div class="content">
           <div class="hint">
-            Settings → Pages<br/>
-            Source: <strong>Deploy from a branch</strong><br/>
-            Branch: <strong>main</strong> | Folder: <strong>/(root)</strong><br/>
-            Depois: <strong>Save</strong>
+            No repositório:
+            <ul style="margin:8px 0 0 18px; color:rgba(255,255,255,.86)">
+              <li><strong>Settings</strong> → <strong>Pages</strong></li>
+              <li><strong>Source</strong>: <strong>Deploy from a branch</strong></li>
+              <li><strong>Branch</strong>: <strong>main</strong> • <strong>Folder</strong>: <strong>/(root)</strong></li>
+              <li>Carrega em <strong>Save</strong></li>
+            </ul>
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: Settings → Pages com Source e Branch definidos</small>
+              <img src="../images/pages_03.png" alt="Print Pages settings (substituir)">
+            </div>
+            <div class="ph">
+              <small>📸 Print sugerido: confirmação/estado do deploy (Pages a processar)</small>
+              <img src="../images/pages_04.png" alt="Print deploy a decorrer (substituir)">
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- PASSO 3 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">3</div>
-            <div>
+            <div style="min-width:0">
               <h4>Abrir o link do site</h4>
-              <p>O GitHub mostra o URL do Pages.</p>
+              <p>O GitHub mostra o URL do Pages quando o deploy termina.</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="pg-3"> Concluído</label>
         </div>
+
         <div class="content">
           <div class="hint">
-            O link será parecido com: <code>https://TEU_USER.github.io/TEU_REPO/</code><br/>
-            Coloca esse link no README.
+            O link será parecido com:
+            <br/>
+            <code>https://TEU_USER.github.io/TEU_REPO/</code>
+            <br/>
+            Abre o link e confirma se carrega o site corretamente.
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: link do Pages visível na secção Pages</small>
+              <img src="../images/pages_05.png" alt="Print link do Pages (substituir)">
+            </div>
+            <div class="ph">
+              <small>📸 Print sugerido: site a abrir no browser (primeira página)</small>
+              <img src="../images/pages_06.png" alt="Print site online (substituir)">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASSO 4 -->
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">4</div>
+            <div style="min-width:0">
+              <h4>Colocar o link no README</h4>
+              <p>Ajuda na entrega e facilita o acesso ao professor/avaliador.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="pg-4"> Concluído</label>
+        </div>
+
+        <div class="content">
+          <div class="codebox">
+            <div class="codebar">
+              <span>Exemplo para o README</span>
+              <button class="btn primary" data-copy="#code-pages-readme">Copiar</button>
+            </div>
+            <pre id="code-pages-readme"><code>## Site (GitHub Pages)
+🔗 https://TEU_USER.github.io/TEU_REPO/</code></pre>
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: README com o link do Pages</small>
+              <img src="../images/pages_07.png" alt="Print README com link (substituir)">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASSO 5 (TROUBLESHOOT) -->
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">5</div>
+            <div style="min-width:0">
+              <h4>Resolver problemas comuns (rápido)</h4>
+              <p>Se algo falhar, normalmente é uma destas 4 razões.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="pg-5"> Concluído</label>
+        </div>
+
+        <div class="content">
+          <div class="hint">
+            <ul style="margin:8px 0 0 18px; color:rgba(255,255,255,.86)">
+              <li><strong>404</strong>: não existe <code>index.html</code> no local configurado (root) ou o deploy ainda não terminou.</li>
+              <li><strong>CSS não aparece</strong>: caminho errado (ex.: <code>/css/style.css</code> em vez de <code>./css/style.css</code>).</li>
+              <li><strong>Imagens não carregam</strong>: nome diferente (maiúsculas/minúsculas contam) ou caminho errado.</li>
+              <li><strong>Página branca</strong>: erro de JS no console ou ficheiros não foram “commitados”.</li>
+            </ul>
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: exemplo de erro 404 + dica do que corrigir</small>
+              <img src="../images/pages_08.png" alt="Print 404 (substituir)">
+            </div>
+            <div class="ph">
+              <small>📸 Print sugerido: exemplo de paths relativos corretos (HTML/CSS)</small>
+              <img src="../images/pages_09.png" alt="Print paths relativos (substituir)">
+            </div>
           </div>
         </div>
       </div>
 
       <div class="footer">
-        <strong>Prints sugeridos:</strong> (1) Settings → Pages configurado, (2) link do site.
+        <strong>Prints sugeridos (mínimo):</strong>
+        1) Settings → Pages configurado, 2) link do site, 3) site a abrir no browser, 4) README com link.
       </div>
     </section>
 
