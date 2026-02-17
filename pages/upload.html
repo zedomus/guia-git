@@ -15,7 +15,7 @@
       <img src="../images/avatar.png" class="avatar" alt="José Carlos Alves">
       <div>
         <h1>Guia Interativo — GitHub</h1>
-        <p>Tutorial prático (exemplo: PAP)</p>
+        <p>Manual prático para projetos (exemplo: PAP)</p>
       </div>
     </div>
 
@@ -38,6 +38,9 @@
         <button class="btn" id="unmarkAll">Desmarcar</button>
         <button class="btn danger" id="resetStorage">Reset progresso</button>
       </div>
+      <div style="margin-top:10px; font-size:12px; color:var(--muted)">
+        Dica: mantém nomes consistentes e coloca evidências em <code>images/</code>.
+      </div>
     </div>
 
     <div class="sidebar-footer">
@@ -46,127 +49,253 @@
   </aside>
 
   <main class="main">
+
+    <!-- HERO -->
     <header class="hero">
       <h2>Upload & Organização</h2>
       <p>
-        Nesta página vais criar uma estrutura organizada e fazer upload de ficheiros.
-        A ideia é o repositório ficar “limpo” e fácil de navegar (exemplo: PAP).
+        Nesta página vais criar uma <strong>estrutura organizada</strong> e fazer <strong>upload</strong> de ficheiros no GitHub.
+        Para uma PAP, isto é essencial: facilita a avaliação, evita “pastas caóticas” e deixa evidências claras do trabalho.
       </p>
+      <p>
+        O objetivo é que qualquer pessoa consiga abrir o teu repositório e perceber rapidamente:
+        <strong>onde está o código</strong>, <strong>onde está a documentação</strong> e <strong>onde estão as evidências</strong>.
+      </p>
+
       <div class="meta">
         <span class="tag">📁 Pastas</span>
         <span class="tag">⬆️ Upload</span>
         <span class="tag">🧾 Evidências</span>
+        <span class="tag">🧼 Organização</span>
+      </div>
+
+      <!-- Banner (opcional) -->
+      <div class="prints" style="margin-top:14px; display:flex; justify-content:center">
+        <div class="ph" style="max-width: 980px; width:100%">
+          <img src="../images/upload_banner.png" alt="Banner Upload & Organização" style="display:block; margin:0 auto;">
+        </div>
       </div>
     </header>
 
+    <!-- REGRAS SIMPLES -->
     <section class="section">
-      <h2>Estrutura recomendada</h2>
-      <p class="subtitle">Sugestão simples e eficiente para projetos com documentação + evidências.</p>
+      <h2>Regras simples (para manter o repositório limpo)</h2>
+      <p class="subtitle">Estas regras evitam 90% dos erros de organização.</p>
 
-      <div class="codebox">
-        <div class="codebar">
-          <span>Estrutura</span>
-          <button class="btn primary" data-copy="#code-struct">Copiar</button>
-        </div>
-        <pre id="code-struct"><code>src/       (código)
-docs/      (documentação / relatório)
-images/    (prints e imagens)</code></pre>
-      </div>
+      <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+        <li><strong>Um sítio para cada tipo de ficheiro:</strong> código em <code>src/</code>, docs em <code>docs/</code>, evidências em <code>images/</code>.</li>
+        <li><strong>Nomes consistentes:</strong> usa datas e descrições curtas (ex.: <code>2025-02-12_planeamento.pdf</code>).</li>
+        <li><strong>Evita duplicados:</strong> não faças <code>final_final_v3.pdf</code>. Usa versões por data.</li>
+        <li><strong>Não publiques dados pessoais:</strong> tapa informação sensível antes de colocar prints.</li>
+      </ul>
 
       <div class="hint">
-        No GitHub, criar pastas via interface: <strong>Add file → Create new file</strong> e escreve, por exemplo:
-        <code>docs/README.md</code> (o GitHub cria a pasta automaticamente).
+        Sugestão de padrão para prints: <code>YYYY-MM-DD_topico_descricao.png</code> (ex.: <code>2025-03-02_upload_docs.png</code>).
       </div>
     </section>
 
+    <!-- ESTRUTURA -->
+    <section class="section">
+      <h2>Estrutura recomendada</h2>
+      <p class="subtitle">Simples, eficiente e perfeita para projetos com documentação + evidências.</p>
+
+      <div class="codebox">
+        <div class="codebar">
+          <span>Estrutura base</span>
+          <button class="btn primary" data-copy="#code-struct">Copiar</button>
+        </div>
+        <pre id="code-struct"><code>src/        (código do projeto)
+docs/       (documentação: relatório, planeamento, anexos)
+images/     (prints, imagens do projeto, evidências)
+</code></pre>
+      </div>
+
+      <div class="hint">
+        No GitHub (web), crias pastas ao criar um ficheiro com caminho.
+        Ex.: <strong>Add file → Create new file</strong> e escrever <code>docs/README.md</code> cria automaticamente a pasta <code>docs/</code>.
+      </div>
+    </section>
+
+    <!-- PASSOS -->
     <section class="section">
       <h2>Passos</h2>
-      <p class="subtitle">Segue os passos e coloca prints (opcional) como evidência.</p>
+      <p class="subtitle">Segue por ordem. No fim, o teu repositório fica pronto para receber tudo sem confusão.</p>
 
+      <!-- 1 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">1</div>
             <div style="min-width:0">
               <h4>Criar as pastas no repositório</h4>
-              <p>Cria <code>src/</code>, <code>docs/</code> e <code>images/</code>.</p>
+              <p>Cria <code>src/</code>, <code>docs/</code> e <code>images/</code> (mesmo que ainda estejam vazias).</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="up-1" /> Concluído</label>
         </div>
+
         <div class="content">
           <div class="hint">
-            Forma rápida: cria um ficheiro dentro de cada pasta:
+            Forma rápida (web): cria um ficheiro “placeholder” em cada pasta:<br/>
             <ul style="margin:8px 0 0 18px; color:rgba(255,255,255,.86)">
               <li><code>src/.keep</code></li>
               <li><code>docs/.keep</code></li>
               <li><code>images/.keep</code></li>
             </ul>
-            (Depois podes apagar os <code>.keep</code> quando já tiveres ficheiros reais.)
+            Podes apagar os <code>.keep</code> quando já existirem ficheiros reais.
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: “Create new file” a criar <code>docs/.keep</code></small>
+              <img src="../images/upload_criar_pasta.png" alt="Exemplo: criar pasta via caminho (substituir)"/>
+            </div>
+            <div class="ph">
+              <small>✅ Dica: faz um commit por pasta (ou tudo junto) com mensagem clara.</small>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- 2 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">2</div>
             <div style="min-width:0">
-              <h4>Fazer upload de ficheiros</h4>
-              <p>Add file → Upload files (para docs, imagens e recursos).</p>
+              <h4>Fazer upload (forma correta)</h4>
+              <p>Add file → Upload files (ou arrastar e largar) e confirmar no fim.</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="up-2" /> Concluído</label>
         </div>
+
         <div class="content">
           <div class="hint">
             Sugestão de destino:
             <ul style="margin:8px 0 0 18px; color:rgba(255,255,255,.86)">
-              <li>Relatório/ficheiros PDF: <code>docs/</code></li>
-              <li>Imagens/prints: <code>images/</code></li>
-              <li>Ficheiros de projeto: <code>src/</code></li>
+              <li><strong>Relatórios / PDFs:</strong> <code>docs/</code></li>
+              <li><strong>Prints e evidências:</strong> <code>images/</code></li>
+              <li><strong>Código / ficheiros do projeto:</strong> <code>src/</code></li>
             </ul>
+          </div>
+
+          <div class="hint">
+            ⚠️ Atenção a ficheiros muito grandes: se um ficheiro não fizer upload, reduz o tamanho (ex.: comprimir PDF/imagem).
           </div>
 
           <div class="prints">
             <div class="ph">
-              <small>📸 Print sugerido: ecrã “Upload files” antes do commit</small>
-              <img src="../images/print_upload_1.png" alt="Print (substituir)"/>
+              <small>📸 Print sugerido: ecrã “Upload files” com ficheiros prontos</small>
+              <img src="../images/upload_uploadfiles.png" alt="Exemplo: Upload files (substituir)"/>
             </div>
             <div class="ph">
-              <small>📸 Print sugerido: lista de ficheiros no repo depois do upload</small>
-              <img src="../images/print_upload_2.png" alt="Print (substituir)"/>
+              <small>📸 Print sugerido: lista de ficheiros/pastas após upload</small>
+              <img src="../images/upload_lista_ficheiros.png" alt="Exemplo: repositório organizado (substituir)"/>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- 3 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">3</div>
             <div style="min-width:0">
               <h4>Mensagem de commit clara</h4>
-              <p>Descreve o que adicionaste.</p>
+              <p>O commit deve dizer exatamente o que foi adicionado/alterado.</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="up-3" /> Concluído</label>
         </div>
+
         <div class="content">
+          <div class="hint">
+            Regra simples: <strong>verbo + objeto</strong> (ex.: “Adicionar relatório”, “Atualizar prints”, “Criar estrutura”).
+          </div>
+
           <div class="codebox">
             <div class="codebar">
-              <span>Exemplos</span>
+              <span>Exemplos de mensagens</span>
               <button class="btn primary" data-copy="#code-up-msg">Copiar</button>
             </div>
-            <pre id="code-up-msg"><code>Adicionar estrutura inicial do projeto
-Adicionar documentação em docs/
-Adicionar prints de evidência em images/</code></pre>
+            <pre id="code-up-msg"><code>Criar estrutura inicial (src/docs/images)
+Adicionar documentação inicial em docs/
+Adicionar prints de evidência em images/
+Atualizar relatório (versão 2025-03-10)
+Organizar ficheiros e corrigir nomes</code></pre>
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: zona do commit message antes de confirmar</small>
+              <img src="../images/upload_commit_msg.png" alt="Exemplo: commit message (substituir)"/>
+            </div>
+            <div class="ph">
+              <small>✅ Dica: evita “update” ou “coisas” — mais vale ser específico.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">4</div>
+            <div style="min-width:0">
+              <h4>Organização de evidências (prints)</h4>
+              <p>Uma pasta de evidências bem organizada vale ouro na PAP.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="up-4" /> Concluído</label>
+        </div>
+
+        <div class="content">
+          <div class="hint">
+            Sugestão de subpastas (opcional):
+            <ul style="margin:8px 0 0 18px; color:rgba(255,255,255,.86)">
+              <li><code>images/evidencias/</code> (prints de trabalho)</li>
+              <li><code>images/ui/</code> (imagens do protótipo/interface)</li>
+              <li><code>images/diagramas/</code> (esquemas, fluxogramas)</li>
+            </ul>
+          </div>
+
+          <div class="hint">
+            Sugestão: cria um ficheiro <code>docs/evidencias.md</code> com links para as imagens mais importantes (tipo índice).
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: pasta images/ com prints nomeados</small>
+              <img src="../images/upload_evidencias.png" alt="Exemplo: evidências organizadas (substituir)"/>
+            </div>
+            <div class="ph">
+              <small>✅ Dica: usa datas nos prints. É a forma mais simples de provar evolução do trabalho.</small>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="footer">
-        <strong>Dica:</strong> Quando tiveres o Pages ativo, podes colocar no <code>docs/</code> ou no site uma secção “Evidências” com links para as imagens.
+        <strong>Checklist de qualidade:</strong>
+        Tens as pastas criadas? Ficheiros nos sítios certos? Prints com nomes consistentes?
+        Há um commit com mensagem clara a explicar o upload?
+      </div>
+    </section>
+
+    <!-- PRÓXIMO PASSO -->
+    <section class="section">
+      <h2>Próximo passo</h2>
+      <p class="subtitle">
+        Quando o repositório já estiver organizado, o passo seguinte é trabalhar com segurança:
+        <strong>branches</strong> para alterações e <strong>Pull Requests</strong> para integrar mudanças.
+      </p>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn primary" href="branches-pr.html" style="text-decoration:none">Ir para “Branches & PR”</a>
+        <a class="btn" href="../index.html" style="text-decoration:none">Voltar ao início</a>
       </div>
     </section>
 
