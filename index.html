@@ -19,7 +19,6 @@
         </div>
       </div>
 
-      <!-- MENU (sem README) -->
       <nav class="nav" id="nav">
         <a href="index.html" class="active"><span>Início</span><span class="pill">Home</span></a>
         <a href="pages/conta.html"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
@@ -55,18 +54,14 @@
         <h2>Manual Interativo de GitHub para acompanhar uma PAP</h2>
 
         <p>
-          Este site foi criado para servir como <strong>manual de apoio</strong> durante a realização de uma
-          <strong>PAP</strong>, ajudando a organizar o projeto desde o primeiro dia até à entrega final.
-          Ao longo do trabalho, vais criar ficheiros, alterar versões, melhorar documentos, registar evidências e, por vezes,
-          corrigir erros. Com um repositório bem organizado, fica muito mais simples manter tudo controlado.
+          Este manual foi criado como um <strong>guia de apoio contínuo</strong> ao longo do projeto de PAP.
+          A ideia é que o GitHub funcione como a <strong>pasta oficial do projeto</strong>: organização, evidências
+          e histórico de evolução (o que foi feito, quando foi feito e como foi melhorado).
         </p>
 
         <p>
-          A ideia é simples: o <strong>repositório GitHub</strong> funciona como a “pasta oficial” do projeto.
-          Nele ficam guardados:
-          <strong>ficheiros do projeto</strong>, <strong>documentação</strong> (planeamento/relatório), <strong>prints/evidências</strong>
-          e o registo de alterações ao longo do tempo. Assim, o projeto fica mais fácil de acompanhar, melhorar e justificar
-          com evidências reais.
+          Ao longo do trabalho, vais criar ficheiros, atualizar documentos, registar evidências e corrigir erros.
+          Com um repositório bem estruturado, o projeto fica mais fácil de acompanhar, justificar e entregar.
         </p>
 
         <div class="meta">
@@ -83,7 +78,7 @@
           </div>
         </div>
 
-        <!-- BOTÕES DE ATALHO -->
+        <!-- ATALHOS -->
         <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
           <a class="btn primary" href="pages/repo.html" style="display:inline-block; text-decoration:none">Começar pelo Repositório</a>
           <a class="btn" href="pages/upload.html" style="display:inline-block; text-decoration:none">Organizar pastas & evidências</a>
@@ -91,79 +86,65 @@
         </div>
       </header>
 
-      <!-- SOBRE ESTE MANUAL -->
+      <!-- OBJETIVO -->
       <section class="section">
         <h2>Para que serve este manual</h2>
         <p class="subtitle">Objetivo: apoiar o desenvolvimento do projeto do início ao fim, com organização e evidências.</p>
 
         <p>
-          Ao longo do projeto é normal existirem várias versões de ficheiros, mudanças de ideias, correções e melhorias.
-          Sem um método de organização, torna-se fácil perder trabalho, confundir versões ou não conseguir demonstrar
-          aquilo que foi feito em cada etapa. Este manual guia-te nas rotinas essenciais para manteres o projeto “arrumado”.
-        </p>
-
-        <p>
-          Em termos práticos, vais usar o GitHub para:
+          Um projeto bem desenvolvido precisa de organização, documentação e evidências do trabalho realizado.
+          Este manual ajuda a manter o repositório estruturado e a criar uma rotina simples:
+          organizar ficheiros, registar progresso, gerir tarefas e publicar resultados.
         </p>
 
         <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
-          <li><strong>Criar e manter</strong> um repositório do projeto.</li>
-          <li><strong>Organizar</strong> pastas (código, docs, imagens/prints, recursos).</li>
-          <li><strong>Registar evidências</strong> do trabalho (prints e documentos).</li>
-          <li><strong>Trabalhar em segurança</strong> com branches e Pull Requests.</li>
-          <li><strong>Gerir tarefas</strong> com Issues (o que falta fazer, o que já foi feito).</li>
-          <li><strong>Publicar</strong> um site do projeto com GitHub Pages (quando fizer sentido).</li>
+          <li><strong>Organização:</strong> ficheiros e pastas no sítio certo.</li>
+          <li><strong>Evidências:</strong> prints e documentos que comprovam evolução.</li>
+          <li><strong>Progresso:</strong> Issues e PR como registo do que foi feito.</li>
+          <li><strong>Entrega:</strong> links finais (repositório + Pages, se aplicável).</li>
         </ul>
 
         <div class="hint">
-          Sugestão: utiliza este manual como referência semanal. Sempre que avançares uma fase, confirma se o repositório
-          continua limpo, organizado e atualizado (ficheiros no sítio certo e evidências guardadas).
+          Sugestão: usa este manual ao longo do projeto (não só no início). Sempre que avançares uma fase,
+          confirma se o repositório continua limpo, atualizado e com evidências.
         </div>
       </section>
 
-      <!-- VISÃO GERAL (INFOGRÁFICO) -->
+      <!-- INFOGRÁFICO 1 -->
       <section class="section">
         <h2>Visão geral dos tópicos</h2>
-        <p class="subtitle">
-          Este infográfico resume o que vais encontrar em cada secção e ajuda-te a escolher por onde começar.
-        </p>
+        <p class="subtitle">Resumo visual do que vais encontrar em cada secção.</p>
 
         <div class="prints" style="display:flex; justify-content:center">
           <div class="ph" style="max-width: 980px; width:100%">
-            <img src="images/index.png" alt="Infográfico com visão geral dos tópicos" style="display:block; margin:0 auto;">
+            <img src="images/index1.png" alt="Resumo visual dos tópicos do manual" style="display:block; margin:0 auto;">
           </div>
         </div>
-
-        <div class="hint">
+          <div class="hint">
           Se estiveres a começar do zero: segue pela ordem do menu (Conta → Repo → Upload → Branches/PR → Issues → Pages).
         </div>
+      
       </section>
 
-      <!-- COMO USAR AO LONGO DA PAP -->
+       <!-- ROTINA AO LONGO DO PROJETO -->
       <section class="section">
         <h2>Como usar este manual ao longo do projeto</h2>
         <p class="subtitle">Uma rotina simples, repetível e eficaz durante toda a PAP.</p>
-
-        <p>
-          Este manual não é para “ler uma vez e esquecer”. A ideia é ir usando durante o projeto:
-          no início para preparar o repositório, durante o desenvolvimento para manter o trabalho atualizado e,
-          no final, para garantir que tudo está pronto para entregar e apresentar.
-        </p>
 
         <div class="grid">
           <div class="card">
             <div class="head">
               <div>
                 <h3>1) No início</h3>
-                <p>Criar base do projeto e organizar estrutura.</p>
+                <p>Preparar a base do projeto.</p>
               </div>
               <span class="pill">Arranque</span>
             </div>
             <div class="body">
               <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
-                <li>Criar repositório com nome claro e descrição.</li>
+                <li>Criar repositório e descrição.</li>
                 <li>Definir pastas (<code>src/</code>, <code>docs/</code>, <code>images/</code>).</li>
-                <li>Adicionar uma explicação inicial (objetivo + plano).</li>
+                <li>Adicionar informação inicial do projeto.</li>
               </ul>
             </div>
           </div>
@@ -172,15 +153,15 @@
             <div class="head">
               <div>
                 <h3>2) Todas as semanas</h3>
-                <p>Atualizar trabalho e registar evidências.</p>
+                <p>Atualizar e registar evidências.</p>
               </div>
               <span class="pill">Rotina</span>
             </div>
             <div class="body">
               <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
-                <li>Adicionar ficheiros novos e documentação.</li>
-                <li>Guardar prints/evidências do que foi feito.</li>
-                <li>Fechar Issues concluídas e criar novas tarefas.</li>
+                <li>Upload de documentos importantes.</li>
+                <li>Guardar prints do progresso.</li>
+                <li>Atualizar Issues (tarefas e estado).</li>
               </ul>
             </div>
           </div>
@@ -188,16 +169,16 @@
           <div class="card">
             <div class="head">
               <div>
-                <h3>3) Em mudanças grandes</h3>
-                <p>Trabalhar com branches e PR.</p>
+                <h3>3) Mudanças grandes</h3>
+                <p>Branch + PR para segurança.</p>
               </div>
               <span class="pill">Segurança</span>
             </div>
             <div class="body">
               <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
                 <li>Criar branch para alterações relevantes.</li>
-                <li>Abrir Pull Request para integrar na main.</li>
-                <li>Guardar evidências (PR criado e merge feito).</li>
+                <li>Abrir PR e fazer merge quando pronto.</li>
+                <li>Guardar evidências (PR/merge).</li>
               </ul>
             </div>
           </div>
@@ -206,132 +187,25 @@
             <div class="head">
               <div>
                 <h3>4) Antes da entrega</h3>
-                <p>Revisão final e publicação.</p>
+                <p>Revisão e publicação final.</p>
               </div>
               <span class="pill">Final</span>
             </div>
             <div class="body">
               <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
-                <li>Conferir estrutura e ficheiros finais.</li>
-                <li>Confirmar links e evidências no repositório.</li>
-                <li>Ativar/confirmar GitHub Pages (se aplicável).</li>
+                <li>Verificar estrutura e ficheiros finais.</li>
+                <li>Confirmar links do repo e Pages.</li>
+                <li>Garantir evidências organizadas.</li>
               </ul>
             </div>
           </div>
-        </div>
-
-        <div class="hint">
-          O que interessa é consistência: projeto organizado + evidências regulares + evolução documentada.
-        </div>
-      </section>
-
-      <!-- COMEÇAR (cards) -->
-      <section class="section">
-        <h2>Começar</h2>
-        <p class="subtitle">Escolhe um tópico. Cada página tem passos guiados e sugestões de prints.</p>
-
-        <section class="grid">
-          <div class="card">
-            <div class="head">
-              <div>
-                <h3>Conta & Perfil</h3>
-                <p>Conta, email verificado e perfil pronto.</p>
-              </div>
-              <a class="pill" href="pages/conta.html">Abrir</a>
-            </div>
-            <div class="body">
-              <img src="images/ic_conta.png" alt="" style="max-width:72px; opacity:.9">
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="head">
-              <div>
-                <h3>Criar repositório</h3>
-                <p>Nome, visibilidade, configuração inicial.</p>
-              </div>
-              <a class="pill" href="pages/repo.html">Abrir</a>
-            </div>
-            <div class="body">
-              <img src="images/ic_repo.png" alt="" style="max-width:72px; opacity:.9">
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="head">
-              <div>
-                <h3>Upload & organização</h3>
-                <p>Pastas, upload e evidências.</p>
-              </div>
-              <a class="pill" href="pages/upload.html">Abrir</a>
-            </div>
-            <div class="body">
-              <img src="images/ic_upload.png" alt="" style="max-width:72px; opacity:.9">
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="head">
-              <div>
-                <h3>Branches & PR</h3>
-                <p>Trabalhar em segurança e integrar mudanças.</p>
-              </div>
-              <a class="pill" href="pages/branches-pr.html">Abrir</a>
-            </div>
-            <div class="body">
-              <img src="images/ic_branch.png" alt="" style="max-width:72px; opacity:.9">
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="head">
-              <div>
-                <h3>Issues</h3>
-                <p>Tarefas e evidência de progresso.</p>
-              </div>
-              <a class="pill" href="pages/issues.html">Abrir</a>
-            </div>
-            <div class="body">
-              <img src="images/ic_issues.png" alt="" style="max-width:72px; opacity:.9">
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="head">
-              <div>
-                <h3>GitHub Pages</h3>
-                <p>Publicar um site do repositório.</p>
-              </div>
-              <a class="pill" href="pages/pages.html">Abrir</a>
-            </div>
-            <div class="body">
-              <img src="images/ic_pages.png" alt="" style="max-width:72px; opacity:.9">
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="head">
-              <div>
-                <h3>Downloads & links</h3>
-                <p>Ferramentas e como sacar o repositório.</p>
-              </div>
-              <a class="pill" href="pages/downloads.html">Abrir</a>
-            </div>
-            <div class="body">
-              <img src="images/ic_downloads.png" alt="" style="max-width:72px; opacity:.9">
-            </div>
-          </div>
-        </section>
-
-        <div class="footer">
-          Dica: quando adicionares prints, coloca-os em <code>images/</code> e usa nomes consistentes.
-          Se mudares o nome das imagens (ex.: <code>github.png</code> / <code>index.png</code>), atualiza o <code>src</code> no HTML.
         </div>
       </section>
 
       <div class="footer">
         © 2025 José Carlos Alves. Todos os direitos reservados.
       </div>
+
     </main>
   </div>
 
