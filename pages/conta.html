@@ -6,6 +6,7 @@
   <title>Conta & Perfil — Guia GitHub</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
+
 <body>
 <div class="layout">
 
@@ -14,16 +15,16 @@
       <img src="../images/avatar.png" class="avatar" alt="José Carlos Alves">
       <div>
         <h1>Guia Interativo — GitHub</h1>
-        <p>Tutorial prático (exemplo: PAP)</p>
+        <p>Manual prático para projetos (exemplo: PAP)</p>
       </div>
     </div>
 
-        <!-- MENU (sem README) -->
+    <!-- MENU (sem README) -->
     <nav class="nav" id="nav">
       <a href="../index.html"><span>Início</span><span class="pill">Home</span></a>
-      <a href="conta.html"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
+      <a href="conta.html" class="active"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
       <a href="repo.html"><span>Criar repositório</span><span class="pill">Repo</span></a>
-      <a href="upload.html" class="active"><span>Upload & organização</span><span class="pill">Files</span></a>
+      <a href="upload.html"><span>Upload & organização</span><span class="pill">Files</span></a>
       <a href="branches-pr.html"><span>Branches & PR</span><span class="pill">Flow</span></a>
       <a href="issues.html"><span>Issues</span><span class="pill">Tasks</span></a>
       <a href="pages.html"><span>GitHub Pages</span><span class="pill">Site</span></a>
@@ -43,76 +44,221 @@
   </aside>
 
   <main class="main">
+
+    <!-- HERO -->
     <header class="hero">
       <h2>Conta & Perfil</h2>
-      <p>Configuração inicial para usar GitHub num projeto (ex.: PAP): conta, email verificado e perfil organizado.</p>
+      <p>
+        Nesta página fazes a <strong>configuração inicial do GitHub</strong> para um projeto (ex.: PAP).
+        Uma conta bem preparada evita problemas mais tarde (acessos, recuperação de conta, publicação no Pages e identificação do autor).
+      </p>
+      <p>
+        No final, vais ter: <strong>conta criada</strong>, <strong>email verificado</strong>, <strong>perfil organizado</strong>
+        e (recomendado) <strong>segurança reforçada</strong>.
+      </p>
+
       <div class="meta">
         <span class="tag">🔐 Conta</span>
         <span class="tag">✅ Email</span>
         <span class="tag">🧾 Perfil</span>
+        <span class="tag">🛡️ Segurança</span>
+      </div>
+
+      <!-- IMAGEM/BANNER (opcional) -->
+      <div class="prints" style="margin-top:14px; display:flex; justify-content:center">
+        <div class="ph" style="max-width: 980px; width:100%">
+          <img src="../images/conta_banner.png" alt="Banner Conta & Perfil" style="display:block; margin:0 auto;">
+        </div>
       </div>
     </header>
 
+    <!-- OBJETIVOS -->
     <section class="section">
-      <h2>Passos</h2>
-      <p class="subtitle">Segue e marca como concluído.</p>
+      <h2>Objetivos desta etapa</h2>
+      <p class="subtitle">O que fica “feito” antes de criares o teu primeiro repositório.</p>
 
+      <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+        <li><strong>Identificação:</strong> nome e fotografia (opcional) para reconhecer rapidamente o autor do trabalho.</li>
+        <li><strong>Contacto válido:</strong> email verificado para receber alertas e recuperar a conta.</li>
+        <li><strong>Boas práticas:</strong> username adequado e configuração mínima para projetos escolares/profissionais.</li>
+        <li><strong>Segurança:</strong> palavra-passe forte e (recomendado) autenticação em dois fatores (2FA).</li>
+      </ul>
+
+      <div class="hint">
+        Dica: evita usernames “infantis” ou pouco identificáveis. Um username neutro facilita estágios, candidaturas e portefólio.
+      </div>
+    </section>
+
+    <!-- PASSOS -->
+    <section class="section">
+      <h2>Passos (setup inicial)</h2>
+      <p class="subtitle">Segue por ordem. Marca cada etapa quando estiver concluída.</p>
+
+      <!-- 1 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">1</div>
-            <div>
-              <h4>Criar conta</h4>
-              <p>Registo no GitHub.</p>
+            <div style="min-width:0">
+              <h4>Criar conta no GitHub</h4>
+              <p>Registo com um email válido e username adequado.</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="conta-1"> Concluído</label>
         </div>
         <div class="content">
           <div class="hint">
-            Link: <a href="https://github.com/join" target="_blank" rel="noopener">https://github.com/join</a>
+            Link de registo: <a href="https://github.com/join" target="_blank" rel="noopener">github.com/join</a><br/>
+            <strong>Recomendação:</strong> usa um email que consultes com frequência e guarda o username num sítio seguro.
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: ecrã de criação de conta (sem mostrar dados sensíveis)</small>
+              <img src="../images/conta_criarconta.png" alt="Print: criar conta (exemplo)">
+            </div>
+            <div class="ph">
+              <small>✅ Dica: não mostres a palavra-passe nem códigos. Se precisares, tapa essa área antes de entregar.</small>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- 2 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">2</div>
-            <div>
-              <h4>Verificar email</h4>
-              <p>Confirmação de email (muito recomendado).</p>
+            <div style="min-width:0">
+              <h4>Verificar o email</h4>
+              <p>Confirmação do email para garantir acesso e recuperação de conta.</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="conta-2"> Concluído</label>
         </div>
         <div class="content">
           <div class="hint">
-            Settings → Emails: <a href="https://github.com/settings/emails" target="_blank" rel="noopener">abrir</a>
+            Definições de email: <a href="https://github.com/settings/emails" target="_blank" rel="noopener">github.com/settings/emails</a><br/>
+            Procura a indicação de email verificado (<em>verified</em>).
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: página “Emails” com indicação de verificação</small>
+              <img src="../images/conta_email.png" alt="Print: email verificado (exemplo)">
+            </div>
+            <div class="ph">
+              <small>✅ Dica: se o email não aparecer como verificado, abre o teu email e procura a mensagem do GitHub.</small>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- 3 -->
       <div class="step">
         <div class="top">
           <div class="left">
             <div class="badge">3</div>
-            <div>
-              <h4>Atualizar perfil</h4>
-              <p>Nome + (opcional) foto. Ajuda na identificação do trabalho.</p>
+            <div style="min-width:0">
+              <h4>Completar o perfil</h4>
+              <p>Nome visível, fotografia (opcional) e uma breve descrição.</p>
             </div>
           </div>
           <label class="pill"><input type="checkbox" data-check="conta-3"> Concluído</label>
         </div>
         <div class="content">
           <div class="hint">
-            Settings → Profile: <a href="https://github.com/settings/profile" target="_blank" rel="noopener">abrir</a>
+            Definições do perfil: <a href="https://github.com/settings/profile" target="_blank" rel="noopener">github.com/settings/profile</a><br/>
+            <strong>Recomendação:</strong> no “Name” coloca o teu nome real (ou nome profissional).
+          </div>
+
+          <ul style="margin:10px 0 0 0; padding-left:18px; color:rgba(255,255,255,.86)">
+            <li><strong>Name:</strong> Nome e apelido.</li>
+            <li><strong>Bio:</strong> “Projeto PAP — área/tema” (curto e claro).</li>
+            <li><strong>Location:</strong> opcional (pode ser cidade/região).</li>
+          </ul>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: perfil com nome e bio preenchidos</small>
+              <img src="../images/conta_perfil.png" alt="Print: perfil preenchido (exemplo)">
+            </div>
+            <div class="ph">
+              <small>✅ Dica: uma bio simples ajuda a contextualizar o teu repositório quando partilhares o link.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">4</div>
+            <div style="min-width:0">
+              <h4>Reforçar a segurança (recomendado)</h4>
+              <p>Ativar autenticação em dois fatores (2FA) para proteger a conta.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="conta-4"> Concluído</label>
+        </div>
+        <div class="content">
+          <div class="hint">
+            Segurança da conta: <a href="https://github.com/settings/security" target="_blank" rel="noopener">github.com/settings/security</a><br/>
+            <strong>Recomendação:</strong> ativa 2FA (app autenticadora). Guarda os “recovery codes” num local seguro.
+          </div>
+
+          <div class="prints">
+            <div class="ph">
+              <small>📸 Print sugerido: segurança/2FA ativo (sem mostrar códigos)</small>
+              <img src="../images/conta_2fa.png" alt="Print: 2FA (exemplo)">
+            </div>
+            <div class="ph">
+              <small>⚠️ Importante: nunca partilhes códigos de recuperação ou QR codes em prints.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="step">
+        <div class="top">
+          <div class="left">
+            <div class="badge">5</div>
+            <div style="min-width:0">
+              <h4>Definir boas práticas de privacidade (opcional)</h4>
+              <p>Evitar exposição desnecessária de dados pessoais.</p>
+            </div>
+          </div>
+          <label class="pill"><input type="checkbox" data-check="conta-5"> Concluído</label>
+        </div>
+        <div class="content">
+          <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+            <li>Não coloques morada, contactos pessoais completos ou dados sensíveis no perfil.</li>
+            <li>Evita publicar documentos com dados pessoais na pasta <code>docs/</code>.</li>
+            <li>Nos prints, tapa informação sensível (email completo, códigos, etc.).</li>
+          </ul>
+
+          <div class="hint">
+            Lembra-te: se o repositório estiver “Public”, qualquer pessoa com o link pode ver os ficheiros.
           </div>
         </div>
       </div>
 
       <div class="footer">
-        <strong>Prints sugeridos:</strong> (1) email verificado, (2) perfil preenchido.
+        <strong>Entregável sugerido (evidências):</strong>
+        1) print do email verificado, 2) print do perfil preenchido, 3) (opcional) print de 2FA ativo.
+      </div>
+    </section>
+
+    <!-- PRÓXIMOS PASSOS -->
+    <section class="section">
+      <h2>Próximo passo</h2>
+      <p class="subtitle">Depois de teres a conta preparada, estás pronto para criar o repositório do projeto.</p>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn primary" href="repo.html" style="text-decoration:none">Ir para “Criar repositório”</a>
+        <a class="btn" href="../index.html" style="text-decoration:none">Voltar ao início</a>
       </div>
     </section>
 
