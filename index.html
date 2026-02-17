@@ -19,7 +19,7 @@
         </div>
       </div>
 
-      <!-- MENU -->
+      <!-- MENU (sem README) -->
       <nav class="nav" id="nav">
         <a href="index.html" class="active"><span>Início</span><span class="pill">Home</span></a>
         <a href="pages/conta.html"><span>Conta & Perfil</span><span class="pill">Setup</span></a>
@@ -49,13 +49,21 @@
     </aside>
 
     <main class="main">
+
       <!-- HERO -->
       <header class="hero">
         <h2>Manual Interativo de GitHub para acompanhar uma PAP</h2>
         <p>
-          Este site funciona como um <strong>manual de apoio</strong> para os alunos utilizarem ao longo do desenvolvimento
-          dos seus projetos de <strong>PAP</strong>. A ideia é simples: o repositório GitHub passa a ser o “arquivo oficial”
-          do projeto — com <strong>organização</strong>, <strong>evidências</strong> e <strong>histórico</strong> de trabalho.
+          Este site foi criado para servir como <strong>manual de apoio</strong> durante a realização de uma
+          <strong>PAP</strong>, ajudando os alunos a manterem o projeto organizado, documentado e com evidências claras do
+          trabalho desenvolvido ao longo do tempo.
+        </p>
+
+        <p>
+          A ideia é simples: o <strong>repositório GitHub</strong> funciona como a “pasta oficial” do projeto.
+          Nele ficam guardados os ficheiros, a documentação (relatório, planeamento, recursos), as evidências (prints)
+          e um histórico das alterações (commits/atualizações). Assim, o projeto fica mais fácil de acompanhar,
+          melhorar e entregar.
         </p>
 
         <div class="meta">
@@ -65,12 +73,260 @@
           <span class="tag">🚀 GitHub Pages</span>
         </div>
 
-        <!-- BANNER / IMAGEM PRINCIPAL -->
+        <!-- IMAGEM PRINCIPAL (a tua "github") -->
         <div class="prints" style="margin-top:14px">
           <div class="ph">
-            <small>Imagem de capa (coloca em <code>images/github.png</code>)</small>
-            <img src="images/github.png" alt="Capa do manual GitHub para projetos de PAP">
+            <small>Capa do manual (coloca a imagem na pasta <code>images/</code>)</small>
+            <img src="images/github.png" alt="Capa do manual GitHub para PAP">
           </div>
         </div>
 
-       
+        <!-- BOTÕES DE ATALHO -->
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn primary" href="pages/repo.html" style="display:inline-block; text-decoration:none">Começar pelo Repositório</a>
+          <a class="btn" href="pages/upload.html" style="display:inline-block; text-decoration:none">Organizar pastas & evidências</a>
+          <a class="btn" href="pages/pages.html" style="display:inline-block; text-decoration:none">Publicar no Pages</a>
+        </div>
+      </header>
+
+      <!-- SOBRE ESTE MANUAL -->
+      <section class="section">
+        <h2>Para que serve este manual</h2>
+        <p class="subtitle">Objetivo: apoiar o desenvolvimento do projeto do início ao fim, com organização e evidências.</p>
+
+        <p>
+          Ao longo da PAP, é normal existirem várias versões de ficheiros, mudanças de ideias, correções e melhorias.
+          Sem um método de organização, torna-se fácil perder trabalho, confundir versões ou não conseguir justificar
+          decisões tomadas durante o desenvolvimento. Este manual ajuda a resolver isso.
+        </p>
+
+        <p>
+          Em termos práticos, vais usar o GitHub para:
+        </p>
+
+        <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+          <li><strong>Criar e manter</strong> um repositório do projeto.</li>
+          <li><strong>Organizar</strong> pastas (código, docs, imagens/prints, recursos).</li>
+          <li><strong>Registar evidências</strong> do trabalho (prints e documentos).</li>
+          <li><strong>Trabalhar em segurança</strong> com branches e Pull Requests (sem estragar a versão principal).</li>
+          <li><strong>Gerir tarefas</strong> com Issues (o que falta fazer, o que já foi feito).</li>
+          <li><strong>Publicar</strong> um site do projeto com GitHub Pages (manual, relatório, protótipo, portefólio).</li>
+        </ul>
+
+        <div class="hint">
+          Sugestão: usa este manual como referência semanal. Sempre que avançares uma fase, volta aqui e confirma se o repositório
+          continua limpo, organizado e atualizado.
+        </div>
+      </section>
+
+      <!-- IMAGEM "INDEX" (a dos painéis) -->
+      <section class="section">
+        <h2>Visão geral dos tópicos</h2>
+        <p class="subtitle">Resumo visual do que vais aprender em cada secção.</p>
+
+        <div class="prints">
+          <div class="ph">
+            <small>Infográfico (coloca a imagem na pasta <code>images/</code>)</small>
+            <img src="images/index.png" alt="Resumo visual dos tópicos do manual">
+          </div>
+        </div>
+
+        <div class="hint">
+          Se estiveres a começar do zero: segue pela ordem do menu (Conta → Repo → Upload → Branches/PR → Issues → Pages).
+        </div>
+      </section>
+
+      <!-- COMO USAR AO LONGO DA PAP -->
+      <section class="section">
+        <h2>Como usar este manual ao longo do projeto</h2>
+        <p class="subtitle">Uma rotina simples que funciona durante toda a PAP.</p>
+
+        <div class="grid">
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>1) No início</h3>
+                <p>Criar base do projeto e organizar estrutura.</p>
+              </div>
+              <span class="pill">Arranque</span>
+            </div>
+            <div class="body">
+              <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+                <li>Criar repositório (Public se vais usar Pages).</li>
+                <li>Definir pastas (<code>src/</code>, <code>docs/</code>, <code>images/</code>).</li>
+                <li>Adicionar um README com objetivo e plano.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>2) Todas as semanas</h3>
+                <p>Atualizar trabalho e registar evidências.</p>
+              </div>
+              <span class="pill">Rotina</span>
+            </div>
+            <div class="body">
+              <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+                <li>Upload de documentos/prints importantes.</li>
+                <li>Atualizar o README com novidades (se necessário).</li>
+                <li>Usar Issues como lista de tarefas e progresso.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>3) Em mudanças grandes</h3>
+                <p>Trabalhar com branches e PR.</p>
+              </div>
+              <span class="pill">Segurança</span>
+            </div>
+            <div class="body">
+              <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+                <li>Criar uma branch para alterações relevantes.</li>
+                <li>Abrir Pull Request para integrar na main.</li>
+                <li>Guardar evidências (prints do PR, merge, etc.).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>4) Antes da entrega</h3>
+                <p>Revisão final e publicação.</p>
+              </div>
+              <span class="pill">Final</span>
+            </div>
+            <div class="body">
+              <ul style="margin:0; padding-left:18px; color:rgba(255,255,255,.86)">
+                <li>Conferir estrutura e ficheiros finais.</li>
+                <li>Ativar/confirmar GitHub Pages (se aplicável).</li>
+                <li>Garantir links no README (repo + pages).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="hint">
+          O que interessa é consistência: projeto organizado + evidências regulares + histórico de evolução.
+        </div>
+      </section>
+
+      <!-- COMEÇAR (cards) -->
+      <section class="section">
+        <h2>Começar</h2>
+        <p class="subtitle">Escolhe um tópico. Cada página tem passos guiados e sugestões de prints.</p>
+
+        <section class="grid">
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>Conta & Perfil</h3>
+                <p>Conta, email verificado e perfil pronto.</p>
+              </div>
+              <a class="pill" href="pages/conta.html">Abrir</a>
+            </div>
+            <div class="body">
+              <img src="images/ic_conta.png" alt="" style="max-width:72px; opacity:.9">
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>Criar repositório</h3>
+                <p>Nome, visibilidade, configuração inicial.</p>
+              </div>
+              <a class="pill" href="pages/repo.html">Abrir</a>
+            </div>
+            <div class="body">
+              <img src="images/ic_repo.png" alt="" style="max-width:72px; opacity:.9">
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>Upload & organização</h3>
+                <p>Pastas, upload e evidências.</p>
+              </div>
+              <a class="pill" href="pages/upload.html">Abrir</a>
+            </div>
+            <div class="body">
+              <img src="images/ic_upload.png" alt="" style="max-width:72px; opacity:.9">
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>Branches & PR</h3>
+                <p>Trabalhar em segurança e integrar mudanças.</p>
+              </div>
+              <a class="pill" href="pages/branches-pr.html">Abrir</a>
+            </div>
+            <div class="body">
+              <img src="images/ic_branch.png" alt="" style="max-width:72px; opacity:.9">
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>Issues</h3>
+                <p>Tarefas e evidência de progresso.</p>
+              </div>
+              <a class="pill" href="pages/issues.html">Abrir</a>
+            </div>
+            <div class="body">
+              <img src="images/ic_issues.png" alt="" style="max-width:72px; opacity:.9">
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>GitHub Pages</h3>
+                <p>Publicar um site do repositório.</p>
+              </div>
+              <a class="pill" href="pages/pages.html">Abrir</a>
+            </div>
+            <div class="body">
+              <img src="images/ic_pages.png" alt="" style="max-width:72px; opacity:.9">
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="head">
+              <div>
+                <h3>Downloads & links</h3>
+                <p>Ferramentas e como sacar o repositório.</p>
+              </div>
+              <a class="pill" href="pages/downloads.html">Abrir</a>
+            </div>
+            <div class="body">
+              <img src="images/ic_downloads.png" alt="" style="max-width:72px; opacity:.9">
+            </div>
+          </div>
+        </section>
+
+        <div class="footer">
+          Dica: quando adicionares prints, coloca-os em <code>images/</code> e usa nomes consistentes.
+          Se mudares o nome das imagens (ex.: <code>github.png</code> / <code>index.png</code>), atualiza o <code>src</code> no HTML.
+        </div>
+      </section>
+
+      <div class="footer">
+        © 2025 José Carlos Alves. Todos os direitos reservados.
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast">Copiado ✅</div>
+  <script src="js/app.js"></script>
+</body>
+</html>
